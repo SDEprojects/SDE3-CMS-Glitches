@@ -6,14 +6,12 @@ import com.frogger.objects.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class FroggerPanel extends JPanel implements KeyListener, Runnable {
+public class FroggerPanel extends JPanel implements ActionListener, Runnable {
 
-    public static int score;
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
     private final CollisionDetector checkForCollision;
@@ -23,6 +21,7 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
     FroggerGame game;
 
     public FroggerPanel() {
+        this.addKeyListener(new MyKeyAdapter());
         setSize(WIDTH, HEIGHT);
         this.checkForCollision = new CollisionDetector();
 
@@ -58,7 +57,7 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
             e.printStackTrace();
             System.exit(-1);
         }
-        addKeyListener(this);
+        //addKeyListener(this);
 
     }
 

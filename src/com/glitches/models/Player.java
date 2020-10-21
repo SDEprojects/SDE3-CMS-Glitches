@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Player {
     String name;
     ArrayList<String> inventory = new ArrayList<>();
+    int tickets;
 
     // CTOR
     public Player() {}
@@ -27,4 +28,12 @@ public class Player {
     }
 
     public void addToInventory(String key) { this.inventory.add(key); }
+
+    public int getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(int tickets) {
+        this.tickets = tickets;
+    }
 }
