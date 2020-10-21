@@ -6,12 +6,11 @@ import com.frogger.objects.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
-public class FroggerPanel extends JPanel implements KeyListener, Runnable {
+public class FroggerPanel extends JPanel implements ActionListener, Runnable {
 
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
@@ -22,6 +21,7 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
     FroggerGame game;
 
     public FroggerPanel() {
+        this.addKeyListener(new MyKeyAdapter());
         setSize(WIDTH, HEIGHT);
         this.checkForCollision = new CollisionDetector();
 
@@ -57,7 +57,7 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
             e.printStackTrace();
             System.exit(-1);
         }
-        addKeyListener(this);
+        //addKeyListener(this);
 
     }
 
@@ -70,54 +70,62 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
     }
 
     @Override
-    public void run() {
-        while (true) {
-            update();
-            repaint();
-            try {
-                if (FroggerGame.DEAD) {
-                    GameOver gameOver;
-                    gameOver = new GameOver(0); //
-                    gameOver.setBounds(0, 0, WIDTH, HEIGHT);
-                    this.getParent().getParent().add(gameOver,0);
-                    Thread.sleep(50000);
+        public void run() {
+            while (true) {
+                update();
+                repaint();
+                try {
+                    if (FroggerGame.DEAD) {
+                        GameOver gameOver;
+                        gameOver = new GameOver(0); //
+                        gameOver.setBounds(0, 0, WIDTH, HEIGHT);
+                        this.getParent().getParent().add(gameOver,0);
+                        Thread.sleep(50000);
+                    }
+                    if (FroggerGame.WIN) {
+                        YouWin youWin;
+                        youWin = new YouWin(true, 0); //
+                        youWin.setBounds(0, 0, WIDTH, HEIGHT);
+                        this.getParent().getParent().add(youWin,0);
+                        Thread.sleep(50000);
+                    }
+                    Thread.sleep(35);
+                } catch (Exception e) {
+                    System.out.println("I can't fix this bug!");
                 }
-                if (FroggerGame.WIN) {
-                    YouWin youWin;
-                    youWin = new YouWin(true, 0); //
-                    youWin.setBounds(0, 0, WIDTH, HEIGHT);
-                    this.getParent().getParent().add(youWin,0);
-                    Thread.sleep(50000);
-                }
-                Thread.sleep(35);
-            } catch (Exception e) {
-                System.out.println("I can't fix this bug!");
             }
-        }
     }
 
-    public void keyTyped(KeyEvent e) {
-        switch (e.getKeyChar()) {
-            case 'w':
-                if ((game.getPlayer().getY() - 40) > 30)
-                    game.getPlayer().setY(game.getPlayer().getY() - 40);
-                game.getPlayer().setDirection(Frog.UP);
-                break;
-            case 's':
-                if ((game.getPlayer().getY() + 40) < getHeight() - 100)
-                    game.getPlayer().setY(game.getPlayer().getY() + 40);
-                game.getPlayer().setDirection(Frog.DOWN);
-                break;
-            case 'a':
-                if ((game.getPlayer().getX() - 30) > 0)
-                    game.getPlayer().setX(game.getPlayer().getX() - 40);
-                game.getPlayer().setDirection(Frog.LEFT);
-                break;
-            case 'd':
-                if ((game.getPlayer().getX() + 40) < getWidth() - 30)
-                    game.getPlayer().setX(game.getPlayer().getX() + 40);
-                game.getPlayer().setDirection(Frog.RIGHT);
-                break;
+    @Override
+    public void actionPerformed(ActionEvent e) {
+
+    }
+
+    public class MyKeyAdapter extends KeyAdapter {
+        @Override
+        public void keyPressed(KeyEvent e) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_UP:
+                    if ((game.getPlayer().getY() - 40) > 30)
+                        game.getPlayer().setY(game.getPlayer().getY() - 40);
+                    game.getPlayer().setDirection(Frog.UP);
+                    break;
+                case KeyEvent.VK_DOWN:
+                    if ((game.getPlayer().getY() + 40) < getHeight() - 100)
+                        game.getPlayer().setY(game.getPlayer().getY() + 40);
+                    game.getPlayer().setDirection(Frog.DOWN);
+                    break;
+                case KeyEvent.VK_LEFT:
+                    if ((game.getPlayer().getX() - 30) > 0)
+                        game.getPlayer().setX(game.getPlayer().getX() - 40);
+                    game.getPlayer().setDirection(Frog.LEFT);
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    if ((game.getPlayer().getX() + 40) < getWidth() - 30)
+                        game.getPlayer().setX(game.getPlayer().getX() + 40);
+                    game.getPlayer().setDirection(Frog.RIGHT);
+                    break;
+            }
         }
     }
 
