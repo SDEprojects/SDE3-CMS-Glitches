@@ -124,7 +124,7 @@
     <room>
         <name>FroggerTerminalWin</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>You barely beat Frogger with your life intact. A key appears in front of you. You grab the key, and get immediately ejected from the console. There is now a wall in front of you where the distorted Frogger terminal was before. The wall displays Frogger jumping across a street full of busy traffic. However, Frogger is no longer distorted! It looks like the glitch has been fixed. 
+        <story_text>I would hate to see you cross a real street the way you were dodging vehicles. It looks like the glitch has been fixed.
 
         What do you want to do now?</story_text>
         <visible_buttons>1</visible_buttons>

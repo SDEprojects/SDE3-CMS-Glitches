@@ -4,7 +4,7 @@ import com.frogger.objects.*;
 
 public class FroggerGame {
 
-    public static final int PLAYING = 0;
+    public static int PLAYING = 0;
     public static boolean DEAD = false;
     public static boolean WIN = false;
     public static final int frogX = 320, frogY = 275;
@@ -77,7 +77,7 @@ public class FroggerGame {
     }
 
     void checkifThePlayerWin() {
-        if (this.player.getY() <= 75){
+        if (this.player.getY() <= 50){
             WIN = true;
         }
     }

@@ -13,6 +13,7 @@ import java.io.File;
 
 public class FroggerPanel extends JPanel implements KeyListener, Runnable {
 
+    public static int score;
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
     private final CollisionDetector checkForCollision;
@@ -71,30 +72,27 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
 
     @Override
     public void run() {
-        while (true) {
+        while (FroggerGame.PLAYING == 0) {
             update();
             repaint();
             try {
-                if (FroggerGame.DEAD) {
-                    GameOver gameOver;
-                    gameOver = new GameOver(0); //
-                    gameOver.setBounds(0, 0, WIDTH, HEIGHT);
-                    this.getParent().getParent().add(gameOver,0);
-                    Thread.sleep(50000);
-                }
-                if (FroggerGame.WIN) {
+                if ((FroggerGame.WIN) || (FroggerGame.DEAD)) {
                     YouWin youWin;
                     youWin = new YouWin(true, 0); //
                     youWin.setBounds(0, 0, WIDTH, HEIGHT);
-                    this.getParent().getParent().add(youWin,0);
+                    this.getParent().getParent().add(youWin, 0);
                     Thread.sleep(50000);
+                    FroggerGame.PLAYING = 1;
+                    break;
                 }
                 Thread.sleep(35);
             } catch (Exception e) {
                 System.out.println("I can't fix this bug!");
+                break;
             }
         }
     }
+
 
     public void keyTyped(KeyEvent e) {
         switch (e.getKeyChar()) {
@@ -102,21 +100,26 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
                 if ((game.getPlayer().getY() - 40) > 30)
                     game.getPlayer().setY(game.getPlayer().getY() - 40);
                 game.getPlayer().setDirection(Frog.UP);
+                score++;
                 break;
             case 's':
                 if ((game.getPlayer().getY() + 40) < getHeight() - 100)
                     game.getPlayer().setY(game.getPlayer().getY() + 40);
                 game.getPlayer().setDirection(Frog.DOWN);
+                score++;
                 break;
+
             case 'a':
                 if ((game.getPlayer().getX() - 30) > 0)
                     game.getPlayer().setX(game.getPlayer().getX() - 40);
                 game.getPlayer().setDirection(Frog.LEFT);
+                score++;
                 break;
             case 'd':
                 if ((game.getPlayer().getX() + 40) < getWidth() - 30)
                     game.getPlayer().setX(game.getPlayer().getX() + 40);
                 game.getPlayer().setDirection(Frog.RIGHT);
+                score++;
                 break;
         }
     }
@@ -141,7 +144,7 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
             }
         }
 
-        g.setColor(Color.darkGray); // Text.
+        g.setColor(Color.gray); // Text.
         g.setFont(new Font("TimesRoman", Font.ITALIC, 40));
         g.drawString("Lives:", 10, getHeight() - 15);
 
@@ -149,6 +152,14 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
         for (int i = 0; i < game.getLives(); i++) {
             g.drawString("♥", 130 + i * 30, getHeight() - 15);
         }
+
+        g.setColor(Color.gray); //for score
+        g.setFont(new Font("TimesRoman", Font.ITALIC, 40));
+        g.drawString("Score: " + score, getWidth() -200, getHeight()- 15);
+
+
+
+
 
         switch (game.getPlayer().getDirection()) {
             case Frog.UP:
@@ -194,6 +205,7 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
 
     void update() {
         game.update();
+
     }
 
     public void addNotify() {
@@ -204,4 +216,6 @@ public class FroggerPanel extends JPanel implements KeyListener, Runnable {
     void reset() {
         this.game = new FroggerGame();
     }
+
+
 }
