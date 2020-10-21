@@ -127,7 +127,7 @@ class GlitchesGUI extends JFrame {
             // method that calls SnakeMiniGame.main() method
             runSnake();
             // change the room to break out of this loop
-            currentRoom = Rooms.getRoom("SnakeTerminalMid");
+            currentRoom = Rooms.getRoom("SnakeTerminalEnd");
             runGame();
         } else if (currentRoom.getName().equals("ExitDoor")) {
             // checks if player has two Keys in inventory
@@ -151,9 +151,7 @@ class GlitchesGUI extends JFrame {
     }
 
     public void runSnake() {
-//        SnakeMiniGame.main(new SnakeFrame());
       SnakeMiniGame.main(player);
-        System.out.println("runSnake");
     }
 
     public void runFrogger() {

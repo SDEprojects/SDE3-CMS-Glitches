@@ -2,6 +2,7 @@ package com.snake;
 
 import com.glitches.Rooms;
 import com.glitches.models.Player;
+import com.glitches.models.Room;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,60 +11,55 @@ import java.util.Arrays;
 import java.util.Random;
 
 // DONE: Fixed the random shutdown bug! It's a great day to be alive!
-// DONE: Restart button.
 
 public class SnakePanel extends JPanel implements ActionListener {
 
     // Instance Variables / Fields
-
     static final int SCREEN_WIDTH = 700;
-    static final int SCREEN_HEIGHT = 700;
-    static final int UNIT_SIZE = 40;
+    static final int SCREEN_HEIGHT = 600;
+    static final int UNIT_SIZE = 30;
     static final int DELAY = 175;
     final int x[] = new int[SCREEN_WIDTH / UNIT_SIZE];
     final int y[] = new int[SCREEN_HEIGHT / UNIT_SIZE];
-    int bodyParts = 1;
+    int bodyParts = 2;
     int blocksEaten;
     int blockX;
     int blockY;
     char direction = 'R';
     boolean running = false;
     Timer timer;
-    Player player1;
+    Player player;
     Random random;
     private JButton restartButton;
 
-    // Methods
-
+    // Ctor
     SnakePanel(Player player) {
-        player1 = player;
+        this.player = player;
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
-        this.setBackground(Color.pink);
+        this.setBackground(Color.black);
         this.setFocusable(true);
         this.addKeyListener(new MyKeyAdapter());
         startGame();
     }
 
-    private void addRestartButton() { // New game button. Will close out old game.
-        String buttonText = "New Game slappy mcgoooo";
-        restartButton = new JButton(buttonText);
-        Font font = new Font("TimesRoman", Font.ITALIC, 40);
-        restartButton.setFont(font);
-        setLayout(null);
-        restartButton.setBounds(100, 600, 600, 50);
-        add(restartButton);
-        restartButton.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-//                Arrays.asList(Window.getWindows()).forEach(d -> d.dispose());
-                System.out.println("Slappy");
-//                new SnakeFrame();
-                // plass the players points
-                // change the currentRoom
-                // close() window
-            }
-        });
-    }
+    // Methods
+//    private void addRestartButton() { // New game button. Will close out old game.
+//        String buttonText = "New Game slappy mcgoooo";
+//        restartButton = new JButton(buttonText);
+//        Font font = new Font("TimesRoman", Font.ITALIC, 40);
+//        restartButton.setFont(font);
+//        setLayout(null);
+//        restartButton.setBounds(100, 600, 600, 50);
+//        add(restartButton);
+//        restartButton.addActionListener(new ActionListener() {
+//            public void actionPerformed(ActionEvent e) {
+//
+//                // getTopLevelAncestor - then - setVisible(false)
+//                System.out.println("Slappy");
+//            }
+//        });
+//    }
 
     public void startGame() {
         newBlock();
@@ -89,7 +85,7 @@ public class SnakePanel extends JPanel implements ActionListener {
                     g.setColor(Color.green);
                 }
                 else {
-                    g.setColor(new Color(45,180,0));
+                    g.setColor(new Color(80,170,20));
                 }
                 g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
             }
@@ -102,19 +98,23 @@ public class SnakePanel extends JPanel implements ActionListener {
 
     public void endGameMessage(Graphics g) { // This method will end the game, tell the player if they won or lost, then restart if needed.
         if (blocksEaten < 10) {
+            // give tickets to player
+            int winnings = blocksEaten/2;
+            player.setTickets(winnings);
+
+            // set the screen
             g.setColor(Color.green);
             g.setFont(new Font("TimesRoman", Font.ITALIC, 40));
-            g.drawString("You lose", SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
-            addRestartButton();
-            player1.setTickets(10);
-            System.out.println("tickets won: " + player1.getTickets());
-            // set currentRoom = "SnakePanelLose"
-            // .close() this jframe only
+            g.drawString("You lose. Tickets rewarded: " + player.getTickets(), SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+//            addRestartButton();
+            System.out.println("tickets won: " + player.getTickets());
         }else if (blocksEaten == 10) {
-                g.setColor(Color.green);
-                g.setFont(new Font("TimesRoman", Font.ITALIC, 30));
-                g.drawString("You ate enough blocks and fixed Snake! A key spawns in front of you, and you take it.", 50, 200);
-            }
+            player.setTickets(blocksEaten);
+            g.setColor(Color.green);
+            g.setFont(new Font("TimesRoman", Font.ITALIC, 30));
+            g.drawString("You ate 10! Tickets rewarded:" + player.getTickets(), 10, 100);
+            System.out.println("tickets won: " + player.getTickets());
+        }
     }
 
     // randomly choose a place for snake food within the screen bounds
@@ -159,10 +159,8 @@ public class SnakePanel extends JPanel implements ActionListener {
         // check to see if snake head position is overlapping part of your body
         for(int i = bodyParts; i>0; i--) {
             if((x[0] == x[i]) && (y[0] == y[i])) {
-                // gameover()
 
                 running = false;
-//              currentRoom = Rooms.getRoom("SnakeTerminalLose");
             }
         }
 
