@@ -12,8 +12,17 @@
         <btn2_text>No</btn2_text>
         <btn3_text></btn3_text>
         <c1>StartingPoint0</c1>
-        <c2>StartingPoint0</c2>
+        <c2>StartingPoint0.5</c2>
         <c3></c3>
+    </room>
+    <room>
+        <name>StartingPoint0.5</name>
+        <description>You said no to the game</description>
+        <story_text>As you reach down your pockets to pick up your quarter. Your quarter falls down the slot.
+        </story_text>
+        <visible_buttons>1</visible_buttons>
+        <btn1_text>You feel strange!</btn1_text>
+        <c1>StartingPoint0</c1>
     </room>
     <room>
         <name>StartingPoint0</name>
