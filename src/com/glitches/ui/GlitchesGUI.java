@@ -32,27 +32,42 @@ class GlitchesGUI extends JFrame {
 
 
     public GlitchesGUI () {
-        super("Glitches!!");
+        super("Glitches!!Arcade***");
         this.setContentPane(contentPane);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
+        this.setResizable(false);
         this.setLocationRelativeTo(null);
         this.pack();
         //add(contentPane);
         startButton.addActionListener(wsHandler);
     }
 
-
+    // not sure how, but this is the first page that pops up with START button
     public class WelcomeScreenHandler implements ActionListener {
 
         @Override
         public void actionPerformed(ActionEvent evt) {
             player.setName(nameTextField.getText());
             startGame();
-
         }
     }
 
+    //
+    public void startGame() {
+        contentPane.setSize(700, 700);
+        startButton.setVisible(false);
+        nameTextField.setVisible(false);
+
+        // listens for buttons clicked
+        initButtons();
+
+        // listens for updating currentRoom
+        runGame();
+    }
+
+    // controls for navigating through the rooms of the arcade
     public class ChoiceHandler implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
@@ -71,15 +86,7 @@ class GlitchesGUI extends JFrame {
         }
     }
 
-    public void startGame() {
-        contentPane.setSize(800, 800);
-        startButton.setVisible(false);
-        nameTextField.setVisible(false);
-        initButtons();
-
-        runGame();
-    }
-
+    // only display choices that are available according to the xml map
     public void setVisibleButtons(int number) {
         if(number == 0) {
             choice1Button.setVisible(false);
@@ -117,28 +124,34 @@ class GlitchesGUI extends JFrame {
         } else if (currentRoom.getName().equals("SnakeTerminal")) {
             textArea.setText(currentRoom.getStoryText());
             player.addToInventory("Purple Key");
-
+            // method that calls SnakeMiniGame.main() method
             runSnake();
-            currentRoom = Rooms.getRoom("SnakeTerminalWin");
+            // change the room to break out of this loop
+            currentRoom = Rooms.getRoom("SnakeTerminalEnd");
             runGame();
         } else if (currentRoom.getName().equals("ExitDoor")) {
+            // checks if player has two Keys in inventory
             if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 runGame();
             } else {
+                currentRoom = Rooms.getRoom("ExitDoorWin");
                 textArea.setText(currentRoom.getStoryText());
             }
         } else {
+            System.out.println("the else block");
             textArea.setText(currentRoom.getStoryText());
         }
+        // take the currentRoom's buttons and display
         setVisibleButtons(currentRoom.getVisibleButtons());
+        // set the text for the each btn with corresponding xml key
         choice1Button.setText(currentRoom.getBtn1Text());
         choice2Button.setText(currentRoom.getBtn2Text());
         choice3Button.setText(currentRoom.getBtn3Text());
     }
 
     public void runSnake() {
-        SnakeMiniGame.main(new SnakeFrame());
+      SnakeMiniGame.main(player);
     }
 
     public void runFrogger() {

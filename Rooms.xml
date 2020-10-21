@@ -98,21 +98,33 @@
         <btn1_text></btn1_text>
         <btn2_text></btn2_text>
         <btn3_text></btn3_text>
-        <c1>SnakeTerminalWin</c1>
+        <c1></c1>
         <c2></c2>
         <c3></c3>
     </room>
     <room>
-        <name>SnakeTerminalWin</name>
-        <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>You barely beat Snake with your life intact. A key appears in front of you. You grab the key, and get immediately ejected from the console. There is now a wall in front of you where the distorted Snake terminal was before. The wall displays the snake eating blocks and growing. However, the snake is no longer distorted! It looks like the glitch has been fixed. 
+        <name>SnakeTerminalMid</name>
+        <description>Place to go while the player's results of the game are not yet determined</description>
+        <story_text>...You are playing Snake...
 
-        What do you want to do now?</story_text>
+            Win or Lose to be able to go back to the hall.</story_text>
+        <visible_buttons>0</visible_buttons>
+        <btn1_text></btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <c1></c1>
+        <c2></c2>
+        <c3></c3>
+    </room>
+    <room>
+        <name>SnakeTerminalEnd</name>
+        <description>MiniGame that gives key upon completion after you earn key</description>
+        <story_text>Finish gathering your points from Snake before you even decide to go back to the starting point.</story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>Head back toward your starting point</btn1_text>
         <btn2_text></btn2_text>
         <btn3_text></btn3_text>
-        <c1>PurplePath2</c1>
+        <c1>StartingPoint</c1>
         <c2></c2>
         <c3></c3>
     </room>
@@ -126,12 +138,12 @@
         <btn1_text></btn1_text>
         <btn2_text></btn2_text>
         <btn3_text></btn3_text>
-        <c1>FroggerTerminalWin</c1>
+        <c1></c1>
         <c2></c2>
         <c3></c3>
     </room>
     <room>
-        <name>FroggerTerminalWin</name>
+        <name>FroggerTerminalEnd</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
         <story_text>You barely beat Frogger with your life intact. A key appears in front of you. You grab the key, and get immediately ejected from the console. There is now a wall in front of you where the distorted Frogger terminal was before. The wall displays Frogger jumping across a street full of busy traffic. However, Frogger is no longer distorted! It looks like the glitch has been fixed. 
 
