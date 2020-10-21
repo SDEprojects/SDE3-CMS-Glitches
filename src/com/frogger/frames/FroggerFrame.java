@@ -9,6 +9,8 @@ public class FroggerFrame extends JFrame {
 
     public FroggerFrame() {
 
+
+
         super("Frogger");
         InputMap im = getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
         ActionMap am = getRootPane().getActionMap();

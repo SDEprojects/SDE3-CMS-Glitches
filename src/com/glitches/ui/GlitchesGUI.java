@@ -1,5 +1,7 @@
 package com.glitches.ui;
 
+import com.SpaceInvaders.app.App;
+import com.SpaceInvaders.ui.GameMainFrame;
 import com.frogger.StartFroggerGame;
 import com.frogger.frames.FroggerFrame;
 import com.glitches.Rooms;
@@ -119,6 +121,7 @@ class GlitchesGUI extends JFrame {
             player.addToInventory("Green Key");
 
             runFrogger();
+
             currentRoom = Rooms.getRoom("FroggerTerminalWin");
             runGame();
         } else if (currentRoom.getName().equals("SnakeTerminal")) {
@@ -132,6 +135,7 @@ class GlitchesGUI extends JFrame {
         } else if (currentRoom.getName().equals("ExitDoor")) {
             // checks if player has two Keys in inventory
             if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
+                runSpaceInvaders();
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 runGame();
             } else {
@@ -157,6 +161,9 @@ class GlitchesGUI extends JFrame {
     public void runFrogger() {
         StartFroggerGame.main(new FroggerFrame());
     }
+
+    public void runSpaceInvaders() {
+        App.main(new GameMainFrame());}
 
     public void initButtons() {
         choice1Button.addActionListener(choiceHandler);
