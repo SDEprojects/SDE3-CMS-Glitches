@@ -2,6 +2,7 @@ package com.frogger.frames;
 
 import com.frogger.conditions.*;
 import com.frogger.objects.*;
+import com.snake.SnakePanel;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -14,6 +15,7 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
 
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
+    public static int score;
     private final CollisionDetector checkForCollision;
 
     BufferedImage car1_Left, car1_Right, car2_Left, car2_Right, limo_Left, limo_Right, semi_Left, semi_Right, frogUp, frogDown,
@@ -92,36 +94,38 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
         }
     }
 
+    public class MyKeyAdapter extends KeyAdapter {
+        public void keyPressed(KeyEvent e) {
+            switch (e.getKeyCode()) {
+                case KeyEvent.VK_UP:
+                    if ((game.getPlayer().getY() - 40) > 30)
+                        game.getPlayer().setY(game.getPlayer().getY() - 40);
+                    game.getPlayer().setDirection(Frog.UP);
+                    score++;
+                    break;
+                case KeyEvent.VK_DOWN:
+                    if ((game.getPlayer().getY() + 40) < getHeight() - 100)
+                        game.getPlayer().setY(game.getPlayer().getY() + 40);
+                    game.getPlayer().setDirection(Frog.DOWN);
+                    score++;
+                    break;
 
-    public void keyTyped(KeyEvent e) {
-        switch (e.getKeyChar()) {
-            case 'w':
-                if ((game.getPlayer().getY() - 40) > 30)
-                    game.getPlayer().setY(game.getPlayer().getY() - 40);
-                game.getPlayer().setDirection(Frog.UP);
-                score++;
-                break;
-            case 's':
-                if ((game.getPlayer().getY() + 40) < getHeight() - 100)
-                    game.getPlayer().setY(game.getPlayer().getY() + 40);
-                game.getPlayer().setDirection(Frog.DOWN);
-                score++;
-                break;
-
-            case 'a':
-                if ((game.getPlayer().getX() - 30) > 0)
-                    game.getPlayer().setX(game.getPlayer().getX() - 40);
-                game.getPlayer().setDirection(Frog.LEFT);
-                score++;
-                break;
-            case 'd':
-                if ((game.getPlayer().getX() + 40) < getWidth() - 30)
-                    game.getPlayer().setX(game.getPlayer().getX() + 40);
-                game.getPlayer().setDirection(Frog.RIGHT);
-                score++;
-                break;
+                case KeyEvent.VK_LEFT:
+                    if ((game.getPlayer().getX() - 30) > 0)
+                        game.getPlayer().setX(game.getPlayer().getX() - 40);
+                    game.getPlayer().setDirection(Frog.LEFT);
+                    score++;
+                    break;
+                case KeyEvent.VK_RIGHT:
+                    if ((game.getPlayer().getX() + 40) < getWidth() - 30)
+                        game.getPlayer().setX(game.getPlayer().getX() + 40);
+                    game.getPlayer().setDirection(Frog.RIGHT);
+                    score++;
+                    break;
+            }
         }
     }
+
 
     public void paint(Graphics g) {
         g.setColor(Color.green);
@@ -217,4 +221,8 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
     }
 
 
+    @Override
+    public void actionPerformed(ActionEvent actionEvent) {
+
+    }
 }
