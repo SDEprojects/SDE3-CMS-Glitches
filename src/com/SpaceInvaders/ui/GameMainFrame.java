@@ -24,10 +24,11 @@ public class GameMainFrame extends JFrame {
         setIconImage(ImageFactory.createImage(Image.SPACESHIP).getImage());
 
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE); //close when x is clicked
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE); //close when x is clicked
         setLocationRelativeTo(null);  //  centered in middle of screen
         setResizable(false);  // user can't resize screen
         setVisible(true);  // frame is visible to user
+
     }
 
 
