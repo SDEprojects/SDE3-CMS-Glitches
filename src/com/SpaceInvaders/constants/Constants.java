@@ -1,12 +1,15 @@
 package com.SpaceInvaders.constants;
 
+import com.SpaceInvaders.ui.GamePanel;
+import com.frogger.frames.FroggerPanel;
+
 public class Constants {
 
     private Constants() {
 
     }
 
-    public static final String Title = "Cosmonaut Commander";
+    public static final String Title = "Space Invaders";
 
     // size of the board, not the frame
     public static final int BOARD_WIDTH = 900;
@@ -40,13 +43,14 @@ public class Constants {
     public static final int LASER_SPEED = 4;
 
     // image locations
-    public static final String BACKGROUND_IMAGE_URL = "sprites/background.jpg";
-    public static final String SPACESHIP_IMAGE_URL = "sprites/spaceship.png";
-    public static final String BOMB_IMAGE_URL = "sprites/bomb.png";
-    public static final String LASER_IMAGE_URL = "sprites/laser.png";
-    public static final String UFO_IMAGE_URL = "sprites/ufo.png";
+    public static final String BACKGROUND_IMAGE_URL = "src/com/SpaceInvaders/sprites/background.jpg";
+    public static final String SPACESHIP_IMAGE_URL = "src/com/SpaceInvaders/sprites/spaceship.png";
+    public static final String BOMB_IMAGE_URL = "src/com/SpaceInvaders/sprites/bomb.png";
+    public static final String LASER_IMAGE_URL = "src/com/SpaceInvaders/sprites/laser.png";
+    public static final String UFO_IMAGE_URL = "src/com/SpaceInvaders/sprites/ufo.png";
 
-    public static final String WIN = "Congrats Comrade!";
-    public static final String GAME_OVER = "You Have Failed Us!";
+    public static final String WIN = "Congratulations!";
+    public static final String GAME_OVER = "Better Luck Next Time!";
+    public static final String TICKETS = "Tickets Won: " + GamePanel.score + " !";
 
 }

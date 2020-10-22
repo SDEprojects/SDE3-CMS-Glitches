@@ -204,8 +204,8 @@ public class SnakePanel extends JPanel implements ActionListener {
     }
 
     // Key Adapter
-
     public class MyKeyAdapter extends KeyAdapter {
+
         @Override
         public void keyPressed(KeyEvent e) {
             switch(e.getKeyCode()) {

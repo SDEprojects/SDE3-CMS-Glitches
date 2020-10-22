@@ -3,7 +3,7 @@ import com.glitches.xml.*;
 
 public class Client {
     public static void main(String[] args) {
-        ReadXMLFiles.initRooms();
-        GlitchesGUI glitchesGUI = new GlitchesGUI();
+            ReadXMLFiles.initRooms();
+            GlitchesGUI glitchesGUI = new GlitchesGUI();
     }
 }
