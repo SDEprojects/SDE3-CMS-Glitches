@@ -50,7 +50,6 @@
         <name>StartingPoint</name>
         <description>Starting point once the player revisits the area after already being in the game</description>
         <story_text>You're back where you first found yourself after entering the void.
-
         Where do you want to go?</story_text>
         <visible_buttons>3</visible_buttons>
         <btn1_text>Go left</btn1_text>
@@ -152,7 +151,7 @@
         <btn1_text>Head back toward your starting point</btn1_text>
         <btn2_text></btn2_text>
         <btn3_text></btn3_text>
-        <c1>GreenPath2</c1>
+        <c1>StartingPoint</c1>
         <c2></c2>
         <c3></c3>
     </room>

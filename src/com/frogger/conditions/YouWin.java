@@ -3,6 +3,7 @@ package com.frogger.conditions;
 import com.frogger.UI.PlaceholderTextField;
 import com.frogger.frames.FroggerFrame;
 import com.frogger.frames.FroggerPanel;
+import com.glitches.models.Player;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -12,9 +13,11 @@ import javax.swing.*;
 public class YouWin extends JPanel implements ActionListener {
     public static PlaceholderTextField usernameTextArea;
     int index;
+    Player player;
 
 
-    public YouWin(boolean showUserInput, int index) {
+    public YouWin(boolean showUserInput, int index, Player player) {
+        this.player = player;
         this.setOpaque(true);
         this.setVisible(true);
         this.setLayout((LayoutManager) null);
@@ -31,7 +34,7 @@ public class YouWin extends JPanel implements ActionListener {
         g2d.setComposite(old);
         g.setColor(Color.green);
         g.setFont(new Font("TimesRoman", Font.ITALIC, 20));
-        g.drawString("Please collect your " + FroggerPanel.score + " tickets and play another game!.", 50, 100);
+        g.drawString("Please collect your " + player.getTickets() + " tickets and play another game!.", 50, 100);
         addExitButton();
     }
 

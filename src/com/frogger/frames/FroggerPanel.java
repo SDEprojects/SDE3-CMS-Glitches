@@ -2,7 +2,7 @@ package com.frogger.frames;
 
 import com.frogger.conditions.*;
 import com.frogger.objects.*;
-import com.snake.SnakePanel;
+import com.glitches.models.Player;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -16,13 +16,15 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
     public static int score;
+    Player player;
     private final CollisionDetector checkForCollision;
 
     BufferedImage car1_Left, car1_Right, car2_Left, car2_Right, limo_Left, limo_Right, semi_Left, semi_Right, frogUp, frogDown,
             frogLeft, frogRight, frogLife;
     FroggerGame game;
 
-    public FroggerPanel() {
+    public FroggerPanel(Player player) {
+        this.player = player;
         this.addKeyListener(new MyKeyAdapter());
         setSize(WIDTH, HEIGHT);
         this.checkForCollision = new CollisionDetector();
@@ -60,7 +62,6 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
             System.exit(-1);
         }
         //addKeyListener(this);
-
     }
 
     @Deprecated
@@ -78,8 +79,7 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
             repaint();
             try {
                 if ((FroggerGame.WIN) || (FroggerGame.DEAD)) {
-                    YouWin youWin;
-                    youWin = new YouWin(true, 0); //
+                    YouWin youWin = new YouWin(true, 0, player); //
                     youWin.setBounds(0, 0, WIDTH, HEIGHT);
                     this.getParent().getParent().add(youWin, 0);
                     Thread.sleep(50000);
@@ -89,38 +89,43 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
                 Thread.sleep(35);
             } catch (Exception e) {
                 System.out.println("I can't fix this bug!");
+                System.out.println(e.getMessage());
                 break;
             }
         }
     }
 
+    // check for user input directional keys
     public class MyKeyAdapter extends KeyAdapter {
         public void keyPressed(KeyEvent e) {
             switch (e.getKeyCode()) {
                 case KeyEvent.VK_UP:
-                    if ((game.getPlayer().getY() - 40) > 30)
-                        game.getPlayer().setY(game.getPlayer().getY() - 40);
-                    game.getPlayer().setDirection(Frog.UP);
+                    if ((game.getFrog().getY() - 40) > 30)
+                        game.getFrog().setY(game.getFrog().getY() - 40);
+                    game.getFrog().setDirection(Frog.UP);
                     score++;
+                    player.setTickets(score/2);
                     break;
                 case KeyEvent.VK_DOWN:
-                    if ((game.getPlayer().getY() + 40) < getHeight() - 100)
-                        game.getPlayer().setY(game.getPlayer().getY() + 40);
-                    game.getPlayer().setDirection(Frog.DOWN);
+                    if ((game.getFrog().getY() + 40) < getHeight() - 100)
+                        game.getFrog().setY(game.getFrog().getY() + 40);
+                    game.getFrog().setDirection(Frog.DOWN);
                     score++;
+                    player.setTickets(score/2);
                     break;
-
                 case KeyEvent.VK_LEFT:
-                    if ((game.getPlayer().getX() - 30) > 0)
-                        game.getPlayer().setX(game.getPlayer().getX() - 40);
-                    game.getPlayer().setDirection(Frog.LEFT);
+                    if ((game.getFrog().getX() - 30) > 0)
+                        game.getFrog().setX(game.getFrog().getX() - 40);
+                    game.getFrog().setDirection(Frog.LEFT);
                     score++;
+                    player.setTickets(score/2);
                     break;
                 case KeyEvent.VK_RIGHT:
-                    if ((game.getPlayer().getX() + 40) < getWidth() - 30)
-                        game.getPlayer().setX(game.getPlayer().getX() + 40);
-                    game.getPlayer().setDirection(Frog.RIGHT);
+                    if ((game.getFrog().getX() + 40) < getWidth() - 30)
+                        game.getFrog().setX(game.getFrog().getX() + 40);
+                    game.getFrog().setDirection(Frog.RIGHT);
                     score++;
+                    player.setTickets(score/2);
                     break;
             }
         }
@@ -160,27 +165,23 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
         g.setFont(new Font("TimesRoman", Font.ITALIC, 40));
         g.drawString("Score: " + score, getWidth() -200, getHeight()- 15);
 
-
-
-
-
-        switch (game.getPlayer().getDirection()) {
+        // paint the frog image based on the most recent direction change
+        switch (game.getFrog().getDirection()) {
             case Frog.UP:
-                g.drawImage(frogUp, game.getPlayer().getX(), game.getPlayer().getY(), null);
+                g.drawImage(frogUp, game.getFrog().getX(), game.getFrog().getY(), null);
                 break;
             case Frog.DOWN:
-                g.drawImage(frogDown, game.getPlayer().getX(), game.getPlayer().getY(), null);
+                g.drawImage(frogDown, game.getFrog().getX(), game.getFrog().getY(), null);
                 break;
             case Frog.LEFT:
-                g.drawImage(frogLeft, game.getPlayer().getX(), game.getPlayer().getY(), null);
+                g.drawImage(frogLeft, game.getFrog().getX(), game.getFrog().getY(), null);
                 break;
             case Frog.RIGHT:
-                g.drawImage(frogRight, game.getPlayer().getX(), game.getPlayer().getY(), null);
+                g.drawImage(frogRight, game.getFrog().getX(), game.getFrog().getY(), null);
                 break;
         }
 
         // Moving Vehicles
-
         for (CarLane cl : game.getCarLanes())
         {
             for (int p = 0; p < cl.laneItems.size(); p++)
@@ -208,7 +209,6 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
 
     void update() {
         game.update();
-
     }
 
     public void addNotify() {

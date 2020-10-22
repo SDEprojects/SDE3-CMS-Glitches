@@ -119,10 +119,10 @@ class GlitchesGUI extends JFrame {
         } else if (currentRoom.getName().equals("FroggerTerminal")) {
             textArea.setText(currentRoom.getStoryText());
             player.addToInventory("Green Key");
-
+            // method that calls StartFroggerGame.main() method
             runFrogger();
 
-            currentRoom = Rooms.getRoom("FroggerTerminalWin");
+            currentRoom = Rooms.getRoom("FroggerTerminalEnd");
             runGame();
         } else if (currentRoom.getName().equals("SnakeTerminal")) {
             textArea.setText(currentRoom.getStoryText());
@@ -143,8 +143,7 @@ class GlitchesGUI extends JFrame {
                 textArea.setText(currentRoom.getStoryText());
             }
         } else {
-            System.out.println("the else block");
-            textArea.setText(currentRoom.getStoryText());
+            textArea.setText(currentRoom.getStoryText() + "Total tickets won: " + player.getTickets());
         }
         // take the currentRoom's buttons and display
         setVisibleButtons(currentRoom.getVisibleButtons());
@@ -159,7 +158,7 @@ class GlitchesGUI extends JFrame {
     }
 
     public void runFrogger() {
-        StartFroggerGame.main(new FroggerFrame());
+        StartFroggerGame.main(player);
     }
 
     public void runSpaceInvaders() {

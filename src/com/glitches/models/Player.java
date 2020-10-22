@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Player {
     String name;
     ArrayList<String> inventory = new ArrayList<>();
-    int tickets;
+    int tickets = 0;
 
     // CTOR
     public Player() {}
@@ -34,6 +34,6 @@ public class Player {
     }
 
     public void setTickets(int tickets) {
-        this.tickets = tickets;
+        this.tickets += tickets;
     }
 }
