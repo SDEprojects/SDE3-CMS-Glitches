@@ -2,7 +2,7 @@ package com.frogger.frames;
 
 import com.frogger.conditions.*;
 import com.frogger.objects.*;
-import com.snake.SnakePanel;
+
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
