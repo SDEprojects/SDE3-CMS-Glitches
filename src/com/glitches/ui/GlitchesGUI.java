@@ -3,18 +3,14 @@ package com.glitches.ui;
 import com.SpaceInvaders.app.App;
 import com.SpaceInvaders.ui.GameMainFrame;
 import com.frogger.StartFroggerGame;
-import com.frogger.frames.FroggerFrame;
 import com.glitches.Rooms;
 import com.glitches.models.Player;
 import com.glitches.models.Room;
 import com.snake.*;
-import com.sun.java.accessibility.util.EventID;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.concurrent.TimeUnit;
 
 
 class GlitchesGUI extends JFrame {
@@ -25,6 +21,7 @@ class GlitchesGUI extends JFrame {
     private JButton choice3Button;
     private JButton choice2Button;
     private JButton choice4Button;
+    private JButton choice5Button;
     private JPanel contentPane;
     private Player player = new Player();
     private Room currentRoom = Rooms.getRoom("IntroArcade");
@@ -44,6 +41,10 @@ class GlitchesGUI extends JFrame {
         this.pack();
         //add(contentPane);
         startButton.addActionListener(wsHandler);
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
     }
 
     // not sure how, but this is the first page that pops up with START button
@@ -83,6 +84,11 @@ class GlitchesGUI extends JFrame {
                 case "c3":
                     currentRoom = Rooms.getRoom(currentRoom.getChoice3());
                     break;
+                case "c4":
+                    currentRoom = Rooms.getRoom(currentRoom.getChoice4());
+                    break;
+                case "c5":
+                    currentRoom = Rooms.getRoom(currentRoom.getChoice5());
             }
             runGame();
         }
@@ -94,22 +100,38 @@ class GlitchesGUI extends JFrame {
             choice1Button.setVisible(false);
             choice2Button.setVisible(false);
             choice3Button.setVisible(false);
+            choice4Button.setVisible(false);
+            choice5Button.setVisible(false);
         } else if(number == 1) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(false);
             choice3Button.setVisible(false);
+            choice4Button.setVisible(false);
+            choice5Button.setVisible(false);
         } else if(number == 2) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(true);
             choice3Button.setVisible(false);
+            choice4Button.setVisible(false);
+            choice5Button.setVisible(false);
         } else if(number == 3) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(true);
             choice3Button.setVisible(true);
+            choice4Button.setVisible(false);
+            choice5Button.setVisible(false);
         } else if(number == 4) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(true);
             choice3Button.setVisible(true);
+            choice4Button.setVisible(true);
+            choice5Button.setVisible(false);
+        } else if(number == 5) {
+            choice1Button.setVisible(true);
+            choice2Button.setVisible(true);
+            choice3Button.setVisible(true);
+            choice4Button.setVisible(true);
+            choice5Button.setVisible(true);
         }
     }
 
@@ -121,7 +143,7 @@ class GlitchesGUI extends JFrame {
             player.addToInventory("Green Key");
             // method that calls StartFroggerGame.main() method
             runFrogger();
-
+            // change the room to break out of this loop
             currentRoom = Rooms.getRoom("FroggerTerminalEnd");
             runGame();
         } else if (currentRoom.getName().equals("SnakeTerminal")) {
@@ -132,21 +154,14 @@ class GlitchesGUI extends JFrame {
             // change the room to break out of this loop
             currentRoom = Rooms.getRoom("SnakeTerminalEnd");
             runGame();
-        } else if (currentRoom.getName().equals(("GoldPath1")))  {
+        } else if (currentRoom.getName().equals("SpaceInvaderTerminal")) {
+            textArea.setText(currentRoom.getStoryText());
             runSpaceInvaders();
-            currentRoom = Rooms.getRoom("GoldPath2");
+            // change the room to break out of this loop
+            currentRoom = Rooms.getRoom("SpaceInvaderTerminalEnd");
             runGame();
-        } else if (currentRoom.getName().equals("GoldPath2")) {
-            // checks if player has two Keys in inventory
-            if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
-                currentRoom = Rooms.getRoom("ExitDoorWin");
-                runGame();
-            } else {
-                currentRoom = Rooms.getRoom("ExitDoorWin");
-                textArea.setText(currentRoom.getStoryText());
-            }
         } else {
-            textArea.setText(currentRoom.getStoryText() + "Total tickets won: " + player.getTickets());
+            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets());
         }
         // take the currentRoom's buttons and display
         setVisibleButtons(currentRoom.getVisibleButtons());
@@ -154,6 +169,8 @@ class GlitchesGUI extends JFrame {
         choice1Button.setText(currentRoom.getBtn1Text());
         choice2Button.setText(currentRoom.getBtn2Text());
         choice3Button.setText(currentRoom.getBtn3Text());
+        choice4Button.setText(currentRoom.getBtn4Text());
+        choice5Button.setText(currentRoom.getBtn5Text());
     }
 
     public void runSnake() {
@@ -174,6 +191,10 @@ class GlitchesGUI extends JFrame {
         choice2Button.setActionCommand("c2");
         choice3Button.addActionListener(choiceHandler);
         choice3Button.setActionCommand("c3");
+        choice4Button.addActionListener(choiceHandler);
+        choice4Button.setActionCommand("c4");
+        choice5Button.addActionListener(choiceHandler);
+        choice5Button.setActionCommand("c5");
     }
 
 }
