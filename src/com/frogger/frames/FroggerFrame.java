@@ -28,7 +28,12 @@ public class FroggerFrame extends JFrame {
         setLocationRelativeTo(null);
         setUndecorated(true);
         pack();
-        FroggerPanel p = new FroggerPanel();
+        FroggerPanel p = new FroggerPanel() {
+            @Override
+            public void actionPerformed(ActionEvent actionEvent) {
+
+            }
+        };
         Insets frameInsets = getInsets();
         int frameWidth = p.getWidth() + (frameInsets.left + frameInsets.right);
         int frameHeight = p.getHeight() + (frameInsets.top + frameInsets.bottom);

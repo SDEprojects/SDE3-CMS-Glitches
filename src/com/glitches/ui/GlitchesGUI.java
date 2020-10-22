@@ -36,8 +36,8 @@ class GlitchesGUI extends JFrame {
     public GlitchesGUI () {
         super("Glitches!!Arcade***");
         this.setContentPane(contentPane);
-        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-//        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setVisible(true);
         this.setResizable(false);
         this.setLocationRelativeTo(null);
@@ -122,7 +122,7 @@ class GlitchesGUI extends JFrame {
 
             runFrogger();
 
-            currentRoom = Rooms.getRoom("FroggerTerminalWin");
+            currentRoom = Rooms.getRoom("FroggerTerminalEnd");
             runGame();
         } else if (currentRoom.getName().equals("SnakeTerminal")) {
             textArea.setText(currentRoom.getStoryText());
@@ -132,10 +132,13 @@ class GlitchesGUI extends JFrame {
             // change the room to break out of this loop
             currentRoom = Rooms.getRoom("SnakeTerminalEnd");
             runGame();
-        } else if (currentRoom.getName().equals("ExitDoor")) {
+        } else if (currentRoom.getName().equals(("GoldPath1")))  {
+            runSpaceInvaders();
+            currentRoom = Rooms.getRoom("GoldPath2");
+            runGame();
+        } else if (currentRoom.getName().equals("GoldPath2")) {
             // checks if player has two Keys in inventory
             if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
-                runSpaceInvaders();
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 runGame();
             } else {
