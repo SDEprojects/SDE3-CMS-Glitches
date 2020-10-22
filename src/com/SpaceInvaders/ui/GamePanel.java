@@ -26,7 +26,7 @@ public class GamePanel extends JPanel {
     private int deaths = 0;
     private String message;
     private Random generator;
-    private int score;
+    public static int score;
     private int lives = 2;
     private ImageIcon backgroundImage;
     private Timer timer;
@@ -120,11 +120,7 @@ public class GamePanel extends JPanel {
 
 
     }
-    //private void drawPlayAgain() {
-       // headerLabel = new JLabel(" ", JLabel.CENTER);
-        //statusLabel = new JLabel(" ", JLabel.CENTER);
-        //statusLabel.setSize(350, 100);
-    //}
+
 
     private void drawScore(Graphics g) {
         if (!inGame) {
@@ -170,12 +166,16 @@ public class GamePanel extends JPanel {
         //you lose
         if (spaceship.isDead()) {
             inGame = false;
-            message = Constants.GAME_OVER;
+            //message = Constants.GAME_OVER;
+            message = Constants.TICKETS;
+
         }
         //you win
         if(deaths == this.enemyShips.size()) {
             inGame = false;
-            message = Constants.WIN;
+            //message = Constants.WIN;
+            message = Constants.TICKETS;
+
         }
 
         this.spaceship.move();
@@ -196,7 +196,7 @@ public class GamePanel extends JPanel {
                     enemy.setVisible(false);
                     laser.die();
                     deaths++;
-                    score =+ 20;
+                    score++;
                 }
             }
             this.laser.move();
