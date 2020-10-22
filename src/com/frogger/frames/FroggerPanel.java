@@ -2,6 +2,7 @@ package com.frogger.frames;
 
 import com.frogger.conditions.*;
 import com.frogger.objects.*;
+
 import com.glitches.models.Player;
 
 import javax.imageio.ImageIO;
