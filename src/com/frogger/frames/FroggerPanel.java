@@ -3,6 +3,7 @@ package com.frogger.frames;
 import com.frogger.conditions.*;
 import com.frogger.objects.*;
 
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class FroggerPanel extends JPanel implements ActionListener, Runnable {
-
+    public static int score;
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
     private final CollisionDetector checkForCollision;
@@ -92,29 +93,36 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
         }
     }
 
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
-    public void keyTyped(KeyEvent e) {
-        switch (e.getKeyChar()) {
-            case 'w':
+    }
+
+    public class MyKeyAdapter extends KeyAdapter {
+//        public int score;
+    public void keyPressed(KeyEvent e) {
+
+        switch (e.getKeyCode()) {
+            case KeyEvent.VK_UP:
                 if ((game.getPlayer().getY() - 40) > 30)
                     game.getPlayer().setY(game.getPlayer().getY() - 40);
                 game.getPlayer().setDirection(Frog.UP);
                 score++;
                 break;
-            case 's':
+            case KeyEvent.VK_DOWN:
                 if ((game.getPlayer().getY() + 40) < getHeight() - 100)
                     game.getPlayer().setY(game.getPlayer().getY() + 40);
                 game.getPlayer().setDirection(Frog.DOWN);
                 score++;
                 break;
 
-            case 'a':
+            case KeyEvent.VK_LEFT:
                 if ((game.getPlayer().getX() - 30) > 0)
                     game.getPlayer().setX(game.getPlayer().getX() - 40);
                 game.getPlayer().setDirection(Frog.LEFT);
                 score++;
                 break;
-            case 'd':
+            case KeyEvent.VK_RIGHT:
                 if ((game.getPlayer().getX() + 40) < getWidth() - 30)
                     game.getPlayer().setX(game.getPlayer().getX() + 40);
                 game.getPlayer().setDirection(Frog.RIGHT);
@@ -122,8 +130,11 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
                 break;
         }
     }
+}
+
 
     public void paint(Graphics g) {
+
         g.setColor(Color.green);
         g.fillRect(0, 0, getWidth(), getHeight());
         g.setColor(Color.white);
