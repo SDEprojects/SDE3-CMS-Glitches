@@ -114,7 +114,7 @@ class GlitchesGUI extends JFrame {
     }
 
     public void runGame() {
-        if(currentRoom.getName().equals("IntroArcade")) {
+        if (currentRoom.getName().equals("IntroArcade")) {
             textArea.setText(player.getName() + currentRoom.getStoryText());
         } else if (currentRoom.getName().equals("FroggerTerminal")) {
             textArea.setText(currentRoom.getStoryText());
@@ -132,19 +132,24 @@ class GlitchesGUI extends JFrame {
             // change the room to break out of this loop
             currentRoom = Rooms.getRoom("SnakeTerminalEnd");
             runGame();
-        } else if (currentRoom.getName().equals(("GoldPath1")))  {
+        } else if (currentRoom.getName().equals(("GoldPath1"))) {
             runSpaceInvaders();
             currentRoom = Rooms.getRoom("GoldPath2");
             runGame();
         } else if (currentRoom.getName().equals("GoldPath2")) {
             // checks if player has two Keys in inventory
-            if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
+            if (player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 runGame();
             } else {
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 textArea.setText(currentRoom.getStoryText());
             }
+        }
+        else if (currentRoom.getName().equals("TicketCounter")) {
+            textArea.setText((currentRoom.getStoryText()));
+            currentRoom = Rooms.getRoom("TicketCounter");
+            runGame();
         } else {
             System.out.println("the else block");
             textArea.setText(currentRoom.getStoryText());
