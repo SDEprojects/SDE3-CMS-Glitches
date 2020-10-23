@@ -11,9 +11,13 @@
         <btn1_text>Yes</btn1_text>
         <btn2_text>No</btn2_text>
         <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
         <c1>StartingPoint0</c1>
         <c2>StartingPoint0.5</c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
         <name>StartingPoint0.5</name>
@@ -22,11 +26,15 @@
         </story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>You feel strange!</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
         <c1>StartingPoint0</c1>
         <c2></c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
         <name>StartingPoint0</name>
@@ -42,123 +50,34 @@
         You think to yourself: "How do I get out of here?" Your basic surival logic kicks in, and you begin to look around for answers. You're currently standing in the room where you found the mysterious light. Instead of getting lost in the dark, you attempt to try basic movement patterns first.
 
         Where do you want to go?</story_text>
-        <visible_buttons>3</visible_buttons>
-        <btn1_text>Go left</btn1_text>
-        <btn2_text>Go right</btn2_text>
-        <btn3_text>Go forward</btn3_text>
+        <visible_buttons>5</visible_buttons>
+        <btn1_text>to Frogger</btn1_text>
+        <btn2_text>to Snake</btn2_text>
+        <btn3_text>to Space Invaders</btn3_text>
+        <btn4_text>to Brick Breaker</btn4_text>
+        <btn5_text>Ticket Counter</btn5_text>
         <c1>GreenPath1</c1>
         <c2>PurplePath1</c2>
         <c3>GoldPath1</c3>
+        <c4>RedPath1</c4>
+        <c5>PrizePath1</c5>
     </room>
     <room>
         <name>StartingPoint</name>
         <description>Starting point once the player revisits the area after already being in the game</description>
         <story_text>You're back where you first found yourself after entering the void.
-
         Where do you want to go?</story_text>
-        <visible_buttons>3</visible_buttons>
-        <btn1_text>Go left</btn1_text>
-        <btn2_text>Go right</btn2_text>
-        <btn3_text>Go forward</btn3_text>
+        <visible_buttons>5</visible_buttons>
+        <btn1_text>to Frogger</btn1_text>
+        <btn2_text>to Snake</btn2_text>
+        <btn3_text>to Space Invaders</btn3_text>
+        <btn4_text>to Brick Breaker</btn4_text>
+        <btn5_text>Ticket Counter</btn5_text>
         <c1>GreenPath1</c1>
         <c2>PurplePath1</c2>
         <c3>GoldPath1</c3>
-    </room>
-    <room>
-        <name>ExitDoor</name>
-        <description>Exit door before both keys are acquired</description>
-        <story_text>A large, pixelated golden door appears in front of you. It has two key slots.
-
-        It looks like you don't have what you need to unlock the door.</story_text>
-        <visible_buttons>1</visible_buttons>
-        <btn1_text>Head back toward your starting point</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <c1>GoldPath2</c1>
-        <c2></c2>
-        <c3></c3>
-    </room>
-    <room>
-        <name>ExitDoorWin</name>
-        <description>Exit door after both keys are acquired</description>
-        <story_text>A large, pixelated golden door appears in front of you. It has two key slots.
-
-        You place both keys into the slots, turn them, and hear a distinct click. You push open the door, and a bright white light blinds you. You rub your eyes, and when you open them, you are staring at the screen of the mysterious machine in the arcade. This time, the screen is now showing Frogger and Snake working as usual. You hear a coin drop below into the coin return panel. You grab the coin and look at it. This is the quarter you used to pay for the game, however one side of the quarter displays a glitched Frogger and the other side displays a glitched Snake. YOU WIN!!</story_text>
-        <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-    </room>
-    <room>
-        <name>SnakeTerminal</name>
-        <description>MiniGame that gives key upon completion before you earn key</description>
-        <story_text>A small, neon purple gaming terminal appears in front of you. It looks exactly like a normal arcade game, but pixelated. On the screen appears a familiar theme--a long snake eating a block, however the snake's body looks distorted. There are controllers beneath the screen.
-
-        After grabbing the controllers, you hear the same sounds that warped all around you before! You close your eyes in fear, and when you open them you see a familiar block in the distance. The snake is nowhere to be seen! You take one step forward to get a better look and you slither! Looking down in disbelief, you are completely purple. You have become the snake!</story_text>
-        <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-    </room>
-    <room>
-        <name>SnakeTerminalMid</name>
-        <description>Place to go while the player's results of the game are not yet determined</description>
-        <story_text>...You are playing Snake...
-
-            Win or Lose to be able to go back to the hall.</story_text>
-        <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-    </room>
-    <room>
-        <name>SnakeTerminalEnd</name>
-        <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>Finish gathering your points from Snake before you even decide to go back to the starting point.</story_text>
-        <visible_buttons>1</visible_buttons>
-        <btn1_text>Head back toward your starting point</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <c1>StartingPoint</c1>
-        <c2></c2>
-        <c3></c3>
-    </room>
-    <room>
-        <name>FroggerTerminal</name>
-        <description>MiniGame that gives key upon completion before you earn key</description>
-        <story_text>A small, neon green gaming terminal appears in front of you. It looks exactly like a normal arcade game, but pixelated. On the screen appears a familiar theme--a small frog crossing a busy road, however the frog looksdistorted. There are controllers beneath the screen. 
-
-        What do you want to do?</story_text>
-        <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-    </room>
-    <room>
-        <name>FroggerTerminalEnd</name>
-        <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>I would hate to see you cross a real street the way you were dodging vehicles. It looks like the glitch has been fixed.
-
-        What do you want to do now?</story_text>
-        <visible_buttons>1</visible_buttons>
-        <btn1_text>Head back toward your starting point</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <c1>GreenPath2</c1>
-        <c2></c2>
-        <c3></c3>
+        <c4>RedPath1</c4>
+        <c5>PrizePath1</c5>
     </room>
     <room>
         <name>PurplePath1</name>
@@ -168,21 +87,47 @@
         <btn1_text>Keep going toward the purple light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
         <btn3_text></btn3_text>
-        <c1>PurplePath2</c1>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>SnakeTerminal</c1>
         <c2>StartingPoint</c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
-        <name>PurplePath2</name>
-        <description>Empty room</description>
-        <story_text>The purple light grows brighter.</story_text>
-        <visible_buttons>2</visible_buttons>
-        <btn1_text>Keep going to the purple light</btn1_text>
-        <btn2_text>Head back toward your starting point</btn2_text>
+        <name>SnakeTerminal</name>
+        <description>MiniGame that gives key upon completion before you earn key</description>
+        <story_text>A small, neon purple gaming terminal appears in front of you. It looks exactly like a normal arcade game, but pixelated. On the screen appears a familiar theme--a long snake eating a block, however the snake's body looks distorted. There are controllers beneath the screen.
+
+            After grabbing the controllers, you hear the same sounds that warped all around you before! You close your eyes in fear, and when you open them you see a familiar block in the distance. The snake is nowhere to be seen! You take one step forward to get a better look and you slither! Looking down in disbelief, you are completely purple. You have become the snake!</story_text>
+        <visible_buttons>0</visible_buttons>
+        <btn1_text></btn1_text>
+        <btn2_text></btn2_text>
         <btn3_text></btn3_text>
-        <c1>SnakeTerminal</c1>
-        <c2>PurplePath1</c2>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1></c1>
+        <c2></c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>SnakeTerminalEnd</name>
+        <description>MiniGame that gives key upon completion after you earn key</description>
+        <story_text>Finish gathering your points from Snake before you even decide to go back to the starting point.</story_text>
+        <visible_buttons>1</visible_buttons>
+        <btn1_text>Head back toward your starting point</btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>StartingPoint</c1>
+        <c2></c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
         <name>GreenPath1</name>
@@ -190,23 +135,51 @@
         <story_text>You see a faint glimpse of green light in the distance.</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the green light</btn1_text>
-        <btn2_text>Ticket Counter</btn2_text>
+        <btn2_text>Head back to your starting point</btn2_text>
         <btn3_text></btn3_text>
-        <c1>GreenPath2</c1>
-        <c2>TicketCounter</c2>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>FroggerTerminal</c1>
+        <c2>StartingPoint</c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
-        <name>GreenPath2</name>
-        <description>Empty room</description>
-        <story_text>The green light grows brighter.</story_text>
-        <visible_buttons>2</visible_buttons>
-        <btn1_text>Keep going to the green light</btn1_text>
-        <btn2_text>Head back toward your starting point</btn2_text>
+        <name>FroggerTerminal</name>
+        <description>MiniGame that gives key upon completion before you earn key</description>
+        <story_text>A small, neon green gaming terminal appears in front of you. It looks exactly like a normal arcade game, but pixelated. On the screen appears a familiar theme--a small frog crossing a busy road, however the frog looksdistorted. There are controllers beneath the screen.
+
+            What do you want to do?</story_text>
+        <visible_buttons>0</visible_buttons>
+        <btn1_text></btn1_text>
+        <btn2_text></btn2_text>
         <btn3_text></btn3_text>
-        <c1>FroggerTerminal</c1>
-        <c2>GreenPath1</c2>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1></c1>
+        <c2></c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>FroggerTerminalEnd</name>
+        <description>MiniGame that gives key upon completion after you earn key</description>
+        <story_text>I would hate to see you cross a real street the way you were dodging vehicles. It looks like the glitch has been fixed.
+
+            What do you want to do now?</story_text>
+        <visible_buttons>1</visible_buttons>
+        <btn1_text>Head back toward your starting point</btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>StartingPoint</c1>
+        <c2/>
+        <c3/>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
         <name>GoldPath1</name>
@@ -216,32 +189,116 @@
         <btn1_text>Keep going toward the gold light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
         <btn3_text></btn3_text>
-        <c1>GoldPath2</c1>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>SpaceInvaderTerminal</c1>
         <c2>StartingPoint</c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
-        <name>GoldPath2</name>
-        <description>Empty room</description>
-        <story_text>The gold light grows brighter</story_text>
-        <visible_buttons>2</visible_buttons>
-        <btn1_text>Keep going to the gold light</btn1_text>
-        <btn2_text>Head back toward your starting point</btn2_text>
+        <name>SpaceInvaderTerminal</name>
+        <description>MiniGame that gives key upon completion before you earn key</description>
+        <story_text>A small, neon gold gaming terminal appears in front of you. It looks exactly like a normal arcade game, but pixelated. On the screen appears a familiar theme--a long snake eating a block, however the snake's body looks distorted. There are controllers beneath the screen.
+
+            After grabbing the controllers, you hear the same sounds that warped all around you before! You close your eyes in fear, and when you open them you see a familiar block in the distance. The snake is nowhere to be seen! You take one step forward to get a better look and you slither! Looking down in disbelief, you are completely gold. You have become the space invader!</story_text>
+        <visible_buttons>0</visible_buttons>
+        <btn1_text></btn1_text>
+        <btn2_text></btn2_text>
         <btn3_text></btn3_text>
-        <c1>ExitDoor</c1>
-        <c2>GoldPath1</c2>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1></c1>
+        <c2></c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
     <room>
-        <name>TicketCounter</name>
-        <description>Place to trade tickets in for prizes.</description>
-        <story_text>Trade in your tickets for prizes!  The more tickets you have, the better the prize!</story_text>
-        <visible_buttons>2</visible_buttons>
-        <btn1_text>Back to Arcade</btn1_text>
-        <btn2_text>Exit Arcade</btn2_text>
+        <name>SpaceInvaderTerminalEnd</name>
+        <description>MiniGame that gives key upon completion after you earn key</description>
+        <story_text>see you cross a real stg vehicles. It looks like the glitch has been fixed.
+
+            What do you want to do now?</story_text>
+        <visible_buttons>1</visible_buttons>
+        <btn1_text>Head back toward your starting point</btn1_text>
+        <btn2_text></btn2_text>
         <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
         <c1>StartingPoint</c1>
-        <c2>SystemExit</c2>
+        <c2/>
+        <c3/>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>RedPath1</name>
+        <description>Empty room</description>
+        <story_text>Under Construction, bricks are falling everywhere.</story_text>
+        <visible_buttons>2</visible_buttons>
+        <btn1_text>Head back to your starting point</btn1_text>
+        <btn2_text>Head back to your starting point</btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>StartingPoint</c1>
+        <c2>StartingPoint</c2>
         <c3></c3>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>PrizePath1</name>
+        <description>Empty room</description>
+        <story_text>Ticket redeemer ahead</story_text>
+        <visible_buttons>2</visible_buttons>
+        <btn1_text>Under construction. Head back to the main lobby</btn1_text>
+        <btn2_text>Head back to your starting point</btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>StartingPoint</c1>
+        <c2>StartingPoint</c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>ExitDoor</name>
+        <description>Exit door before both keys are acquired</description>
+        <story_text>A large, pixelated golden door appears in front of you. It has two key slots.
+
+            It looks like you don't have what you need to unlock the door.</story_text>
+        <visible_buttons>1</visible_buttons>
+        <btn1_text>Head back toward your starting point</btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>GoldPath2</c1>
+        <c2></c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>ExitDoorWin</name>
+        <description>Exit door after both keys are acquired</description>
+        <story_text>A large, pixelated golden door appears in front of you. It has two key slots.
+
+            You place both keys into the slots, turn them, and hear a distinct click. You push open the door, and a bright white light blinds you. You rub your eyes, and when you open them, you are staring at the screen of the mysterious machine in the arcade. This time, the screen is now showing Frogger and Snake working as usual. You hear a coin drop below into the coin return panel. You grab the coin and look at it. This is the quarter you used to pay for the game, however one side of the quarter displays a glitched Frogger and the other side displays a glitched Snake. YOU WIN!!</story_text>
+        <visible_buttons>0</visible_buttons>
+        <btn1_text></btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1></c1>
+        <c2></c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
     </room>
 </class>

@@ -12,7 +12,7 @@ public class FroggerGame {
 
     int status, lives;
     boolean reachedMiddle;
-    Frog player;
+    Frog frog;
     CarLane[] carLanes;
 
     public FroggerGame() {
@@ -20,7 +20,7 @@ public class FroggerGame {
         status = FroggerGame.PLAYING;
         reachedMiddle = false;
         lives = 3;
-        player = new Frog(frogX, frogY);
+        frog = new Frog(frogX, frogY);
         carLanes = new CarLane[5];
 
         for (int i = 0; i < carLanes.length; i++) {
@@ -49,8 +49,8 @@ public class FroggerGame {
         return lives;
     }
 
-    public Frog getPlayer() {
-        return player;
+    public Frog getFrog() {
+        return frog;
     }
 
     public CarLane[] getCarLanes() {
@@ -61,8 +61,8 @@ public class FroggerGame {
     void playerDeath() {
         lives--;
         if (lives > 0) {
-            player.setX(frogX);
-            player.setY(frogY);
+            frog.setX(frogX);
+            frog.setY(frogY);
         }
         else {
             DEAD = true;
@@ -71,13 +71,13 @@ public class FroggerGame {
 
     void carCheck() {
         //todo kills player when contacting car{
-        if (CollisionDetector.CollisionDetector(this.getPlayer(), this.getCarLanes())) {
+        if (CollisionDetector.CollisionDetector(this.getFrog(), this.getCarLanes())) {
             playerDeath();
         }
     }
 
     void checkifThePlayerWin() {
-        if (this.player.getY() <= 50){
+        if (this.frog.getY() <= 50){
             WIN = true;
         }
     }
