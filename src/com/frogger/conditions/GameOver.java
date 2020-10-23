@@ -45,7 +45,7 @@ public class GameOver extends JPanel {
             //new FroggerFrame();
         });
         System.out.println("should start new game");
-        new FroggerFrame();
+//        new FroggerFrame();
 
     }
 }

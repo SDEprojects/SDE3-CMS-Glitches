@@ -28,6 +28,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     char direction = 'R';
     boolean running = false;
     Timer timer;
+    // IS this player the same object from GlitchesGUI ???
     Player player;
     Random random;
     private JButton restartButton;
@@ -100,20 +101,22 @@ public class SnakePanel extends JPanel implements ActionListener {
         if (blocksEaten < 10) {
             // give tickets to player
             int winnings = blocksEaten/2;
+            System.out.println("hello");
+            System.out.println(player.getName());
             player.setTickets(winnings);
 
             // set the screen
             g.setColor(Color.green);
             g.setFont(new Font("TimesRoman", Font.ITALIC, 40));
-            g.drawString("You lose. Tickets rewarded: " + player.getTickets(), SCREEN_WIDTH/2, SCREEN_HEIGHT/2);
+            g.drawString("You lose. Tickets rewarded: " + winnings, 10, 100);
 //            addRestartButton();
-            System.out.println("tickets won: " + player.getTickets());
-        }else if (blocksEaten == 10) {
+            System.out.println("tickets won: " + winnings);
+        } else if (blocksEaten == 10) {
             player.setTickets(blocksEaten);
             g.setColor(Color.green);
             g.setFont(new Font("TimesRoman", Font.ITALIC, 30));
-            g.drawString("You ate 10! Tickets rewarded:" + player.getTickets(), 10, 100);
-            System.out.println("tickets won: " + player.getTickets());
+            g.drawString("You ate 10! Tickets rewarded:" + blocksEaten, 10, 100);
+            System.out.println("tickets won: " + blocksEaten);
         }
     }
 
