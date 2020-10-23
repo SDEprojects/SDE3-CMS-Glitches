@@ -10,7 +10,6 @@ import java.awt.event.*;
 import java.util.Arrays;
 import java.util.Random;
 
-// DONE: Fixed the random shutdown bug! It's a great day to be alive!
 
 public class SnakePanel extends JPanel implements ActionListener {
 

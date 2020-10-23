@@ -7,6 +7,7 @@ import com.SpaceInvaders.listeners.GameEventListener;
 import com.SpaceInvaders.models.Bomb;
 import com.SpaceInvaders.models.EnemyShip;
 import com.SpaceInvaders.models.Laser;
+import com.glitches.models.Player;
 
 import javax.swing.*;
 import java.awt.*;
@@ -32,10 +33,11 @@ public class GamePanel extends JPanel {
     private Timer timer;
     private com.paceInvaders.models.Spaceship spaceship;
     private boolean inGame = true;
+    Player player;
 
 
-
-    public GamePanel() {
+    public GamePanel(Player player) {
+        this.player = player;
         initializeVariables();
         initializeGame();
         initializeLayout();
@@ -197,6 +199,7 @@ public class GamePanel extends JPanel {
                     laser.die();
                     deaths++;
                     score++;
+                    player.setTickets(1);
                 }
             }
             this.laser.move();
@@ -225,7 +228,6 @@ public class GamePanel extends JPanel {
                     ufo.setY(ufo.getY() + Constants.INVADING);
                 }
             }
-
 
             if (enemyShip.isVisible()) {
 

@@ -3,18 +3,19 @@ package com.SpaceInvaders.ui;
 import com.SpaceInvaders.constants.Constants;
 import com.SpaceInvaders.image.Image;
 import com.SpaceInvaders.image.ImageFactory;
+import com.glitches.models.Player;
 
 import javax.swing.*;
 
 public class GameMainFrame extends JFrame {
 
-    public GameMainFrame() {
-        initializeLayout();
+    public GameMainFrame(Player player) {
+        initializeLayout(player);
     }
 
-    private void initializeLayout() {
+    private void initializeLayout(Player player) {
 
-        add(new GamePanel());
+        add(new GamePanel(player));
 
         setTitle(Constants.Title);  // from Constants Class
 

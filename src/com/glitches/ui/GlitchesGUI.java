@@ -182,7 +182,7 @@ class GlitchesGUI extends JFrame {
     }
 
     public void runSpaceInvaders() {
-        App.main(new GameMainFrame());}
+        App.main(player);}
 
     public void initButtons() {
         choice1Button.addActionListener(choiceHandler);
