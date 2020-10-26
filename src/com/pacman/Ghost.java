@@ -1,15 +1,13 @@
 package com.pacman;
 
 //import java.awt.*;
-import java.awt.Color;
-import java.awt.Graphics2D;
-import java.awt.Rectangle;
-import java.util.ArrayList;
+import java.awt.*;
+import java.util.Random;
 
-public class Hero {
+public class Ghost {
 
     GamePanel panel;
-    ArrayList<Food> foods;
+
     int x;
     int y;
     int width;
@@ -19,37 +17,42 @@ public class Hero {
     double yspeed;
 
     Rectangle hitBox;
-    boolean keyLeft;
-    boolean keyRight;
-    boolean keyDown;
-    boolean keyUp;
 
-    public Hero(int x, int y, GamePanel panel, ArrayList<Food> foods) {
+    public Ghost(int x, int y, GamePanel panel) {
         this.panel = panel;
-        this.foods = foods;
         this.x = x;
         this.y = y;
+
+        yspeed = -3;
 
         width = 30;
         height = 30;
         hitBox = new Rectangle(x, y, width, height);
     }
 
-    public void set() {
-        if(keyLeft && !keyRight) {
-            yspeed = 0;
-            xspeed = -5;
-        } else if (keyRight && !keyLeft) {
-            yspeed = 0;
-            xspeed = 5;
-        }
+    public void draw(Graphics2D gtd) {
+        gtd.setColor(Color.red);
+        gtd.fillRect(x, y, width, height);
+    }
 
-        if(keyUp && !keyDown) {
-            xspeed = 0;
-            yspeed = -5;
-        } else if (keyDown && !keyUp) {
-            xspeed = 0;
-            yspeed = 5;
+    public void set() {
+        Random random = new Random();
+        int direction = random.nextInt(4);
+        if(yspeed == 0 && xspeed == 0) {
+            switch (direction) {
+                case 1:
+                    yspeed = -3;
+                    break;
+                case 2:
+                    yspeed = 3;
+                    break;
+                case 3:
+                    xspeed = -3;
+                    break;
+                case 0:
+                    xspeed = 3;
+                    break;
+            }
         }
 
         // horizontal collision
@@ -85,13 +88,5 @@ public class Hero {
 
         hitBox.x = x;
         hitBox.y = y;
-
-        // eating
-        foods.removeIf(food -> hitBox.intersects(food.hitBox));
-    }
-
-    public void draw(Graphics2D gtd) {
-        gtd.setColor(Color.yellow);
-        gtd.fillRect(x, y, width, height);
     }
 }

@@ -99,9 +99,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     public void endGameMessage(Graphics g) { // This method will end the game, tell the player if they won or lost, then restart if needed.
         if (blocksEaten < 10) {
             // give tickets to player
-            int winnings = blocksEaten/2;
-            System.out.println("hello");
-            System.out.println(player.getName());
+            int winnings = blocksEaten;
             player.setTickets(winnings);
 
             // set the screen
@@ -115,7 +113,6 @@ public class SnakePanel extends JPanel implements ActionListener {
             g.setColor(Color.green);
             g.setFont(new Font("TimesRoman", Font.ITALIC, 30));
             g.drawString("You ate 10! Tickets rewarded:" + blocksEaten, 10, 100);
-            System.out.println("tickets won: " + blocksEaten);
         }
     }
 
