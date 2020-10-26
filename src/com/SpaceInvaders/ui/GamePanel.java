@@ -148,7 +148,6 @@ public class GamePanel extends JPanel {
         g.setFont(font);
         g.drawString(message, (Constants.BOARD_WIDTH - fontMetrics.stringWidth(message)) / 2, Constants.BOARD_HEIGHT / 2 -100);
 
-
     }
 
     private void drawBombs(Graphics g) {

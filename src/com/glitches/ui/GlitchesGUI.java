@@ -2,6 +2,7 @@ package com.glitches.ui;
 
 import com.SpaceInvaders.app.App;
 import com.SpaceInvaders.ui.GameMainFrame;
+import com.brickbreaker.StartBrickBreaker;
 import com.frogger.StartFroggerGame;
 import com.glitches.Rooms;
 import com.glitches.models.Player;
@@ -160,7 +161,13 @@ class GlitchesGUI extends JFrame {
             // change the room to break out of this loop
             currentRoom = Rooms.getRoom("SpaceInvaderTerminalEnd");
             runGame();
-        } else {
+        } else if (currentRoom.getName().equals("BrickBreakerTerminal")) {
+            textArea.setText(currentRoom.getStoryText());
+            runBrickBreaker();
+            //change the room to break out of this loop
+            currentRoom = Rooms.getRoom("BrickBreakerTerminalEnd");
+            runGame();
+        } else{
             textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets());
         }
         // take the currentRoom's buttons and display
@@ -181,6 +188,10 @@ class GlitchesGUI extends JFrame {
         StartFroggerGame.main(player);
     }
 
+    public void runBrickBreaker() {
+
+        StartBrickBreaker.main();
+    }
     public void runSpaceInvaders() {
         App.main(player);}
 
