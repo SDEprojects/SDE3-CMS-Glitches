@@ -48,6 +48,7 @@ public class ReadXMLFiles {
                 String btn3Text = roomEle.getElementsByTagName("btn3_text").item(0).getTextContent();
                 String btn4Text = roomEle.getElementsByTagName("btn4_text").item(0).getTextContent();
                 String btn5Text = roomEle.getElementsByTagName("btn5_text").item(0).getTextContent();
+                String btn6Text = roomEle.getElementsByTagName("btn6_text").item(0).getTextContent();
 
                 //gets action choices. returns corresponding room
                 String choice1 = roomEle.getElementsByTagName("c1").item(0).getTextContent();
@@ -55,11 +56,11 @@ public class ReadXMLFiles {
                 String choice3 = roomEle.getElementsByTagName("c3").item(0).getTextContent();
                 String choice4 = roomEle.getElementsByTagName("c4").item(0).getTextContent();
                 String choice5 = roomEle.getElementsByTagName("c5").item(0).getTextContent();
-
+                String choice6 = roomEle.getElementsByTagName("c6").item(0).getTextContent();
 
                 //adds room to the static, globally-accessible Rooms.rooms collection
                 Rooms.addRoom(new Room(roomName, roomDescription, storyText, visibleButtons, btn1Text, btn2Text,
-                                         btn3Text, btn4Text, btn5Text, choice1, choice2, choice3, choice4, choice5));
+                                         btn3Text, btn4Text, btn5Text, btn6Text, choice1, choice2, choice3, choice4, choice5, choice6));
             }
         }
         catch (Exception e) {

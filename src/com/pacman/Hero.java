@@ -10,6 +10,7 @@ public class Hero {
 
     GamePanel panel;
     ArrayList<Food> foods;
+    ArrayList<Ghost> ghosts;
     int x;
     int y;
     int width;
@@ -24,9 +25,10 @@ public class Hero {
     boolean keyDown;
     boolean keyUp;
 
-    public Hero(int x, int y, GamePanel panel, ArrayList<Food> foods) {
+    public Hero(int x, int y, GamePanel panel, ArrayList<Food> foods, ArrayList<Ghost> ghosts) {
         this.panel = panel;
         this.foods = foods;
+        this.ghosts = ghosts;
         this.x = x;
         this.y = y;
 
@@ -52,7 +54,7 @@ public class Hero {
             yspeed = 5;
         }
 
-        // horizontal collision
+        // horizontal wall collision
         hitBox.x += xspeed;
         for (Wall wall: panel.walls) {
             if(hitBox.intersects(wall.hitBox)){
@@ -66,7 +68,7 @@ public class Hero {
             }
         }
 
-        // vertical collisions
+        // vertical wall collisions
         hitBox.y += yspeed;
         for (Wall wall: panel.walls) {
             if(hitBox.intersects(wall.hitBox)){
@@ -77,6 +79,15 @@ public class Hero {
                 hitBox.y -= Math.signum(yspeed);
                 yspeed = 0;
                 y = hitBox.y;
+            }
+        }
+
+        // ghost collisions
+        for(Ghost ghost: ghosts) {
+            if(hitBox.intersects(ghost.hitBox)) {
+                panel.deadByGhost();
+                xspeed = 0;
+                yspeed = 0;
             }
         }
 

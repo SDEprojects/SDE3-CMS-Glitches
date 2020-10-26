@@ -158,7 +158,6 @@ public class SnakePanel extends JPanel implements ActionListener {
         // check to see if snake head position is overlapping part of your body
         for(int i = bodyParts; i>0; i--) {
             if((x[0] == x[i]) && (y[0] == y[i])) {
-
                 running = false;
             }
         }

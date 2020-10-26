@@ -7,6 +7,7 @@ import com.frogger.StartFroggerGame;
 import com.glitches.Rooms;
 import com.glitches.models.Player;
 import com.glitches.models.Room;
+import com.pacman.Pacman;
 import com.snake.*;
 
 import javax.swing.*;
@@ -24,6 +25,7 @@ class GlitchesGUI extends JFrame {
     private JButton choice4Button;
     private JButton choice5Button;
     private JPanel contentPane;
+    private JButton choice6Button;
     private Player player = new Player();
     private Room currentRoom = Rooms.getRoom("IntroArcade");
 
@@ -90,6 +92,10 @@ class GlitchesGUI extends JFrame {
                     break;
                 case "c5":
                     currentRoom = Rooms.getRoom(currentRoom.getChoice5());
+                    break;
+                case "c6":
+                    currentRoom = Rooms.getRoom(currentRoom.getChoice6());
+                    break;
             }
             runGame();
         }
@@ -103,36 +109,49 @@ class GlitchesGUI extends JFrame {
             choice3Button.setVisible(false);
             choice4Button.setVisible(false);
             choice5Button.setVisible(false);
+            choice6Button.setVisible(false);
         } else if(number == 1) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(false);
             choice3Button.setVisible(false);
             choice4Button.setVisible(false);
             choice5Button.setVisible(false);
+            choice6Button.setVisible(false);
         } else if(number == 2) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(true);
             choice3Button.setVisible(false);
             choice4Button.setVisible(false);
             choice5Button.setVisible(false);
+            choice6Button.setVisible(false);
         } else if(number == 3) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(true);
             choice3Button.setVisible(true);
             choice4Button.setVisible(false);
             choice5Button.setVisible(false);
+            choice6Button.setVisible(false);
         } else if(number == 4) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(true);
             choice3Button.setVisible(true);
             choice4Button.setVisible(true);
             choice5Button.setVisible(false);
+            choice6Button.setVisible(false);
         } else if(number == 5) {
             choice1Button.setVisible(true);
             choice2Button.setVisible(true);
             choice3Button.setVisible(true);
             choice4Button.setVisible(true);
             choice5Button.setVisible(true);
+            choice6Button.setVisible(false);
+        } else if (number == 6) {
+            choice1Button.setVisible(true);
+            choice2Button.setVisible(true);
+            choice3Button.setVisible(true);
+            choice4Button.setVisible(true);
+            choice5Button.setVisible(true);
+            choice6Button.setVisible(true);
         }
     }
 
@@ -167,7 +186,13 @@ class GlitchesGUI extends JFrame {
             //change the room to break out of this loop
             currentRoom = Rooms.getRoom("BrickBreakerTerminalEnd");
             runGame();
-        } else{
+        } else if (currentRoom.getName().equals("PacmanTerminal")) {
+            textArea.setText(currentRoom.getStoryText());
+            runPacman();
+            currentRoom = Rooms.getRoom("PacmanTerminalEnd");
+            runGame();
+        }
+        else{
             textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets());
         }
         // take the currentRoom's buttons and display
@@ -178,6 +203,7 @@ class GlitchesGUI extends JFrame {
         choice3Button.setText(currentRoom.getBtn3Text());
         choice4Button.setText(currentRoom.getBtn4Text());
         choice5Button.setText(currentRoom.getBtn5Text());
+        choice6Button.setText(currentRoom.getBtn6Text());
     }
 
     public void runSnake() {
@@ -193,8 +219,11 @@ class GlitchesGUI extends JFrame {
         StartBrickBreaker.main();
     }
     public void runSpaceInvaders() {
-        App.main(player);}
-
+        App.main(player);
+    }
+    public void runPacman(){
+        Pacman.main();
+    }
     public void initButtons() {
         choice1Button.addActionListener(choiceHandler);
         choice1Button.setActionCommand("c1");
@@ -206,6 +235,8 @@ class GlitchesGUI extends JFrame {
         choice4Button.setActionCommand("c4");
         choice5Button.addActionListener(choiceHandler);
         choice5Button.setActionCommand("c5");
+        choice6Button.addActionListener(choiceHandler);
+        choice6Button.setActionCommand("c6");
     }
 
 }

@@ -13,11 +13,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint0</c1>
         <c2>StartingPoint0.5</c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>StartingPoint0.5</name>
@@ -30,11 +32,13 @@
         <btn3_text/>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint0</c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>StartingPoint0</name>
@@ -50,34 +54,38 @@
         You think to yourself: "How do I get out of here?" Your basic surival logic kicks in, and you begin to look around for answers. You're currently standing in the room where you found the mysterious light. Instead of getting lost in the dark, you attempt to try basic movement patterns first.
 
         Where do you want to go?</story_text>
-        <visible_buttons>5</visible_buttons>
+        <visible_buttons>6</visible_buttons>
         <btn1_text>to Frogger</btn1_text>
         <btn2_text>to Snake</btn2_text>
         <btn3_text>to Space Invaders</btn3_text>
         <btn4_text>to Brick Breaker</btn4_text>
         <btn5_text>Ticket Counter</btn5_text>
+        <btn6_text>to Pacman</btn6_text>
         <c1>GreenPath1</c1>
         <c2>PurplePath1</c2>
         <c3>GoldPath1</c3>
         <c4>RedPath1</c4>
         <c5>PrizePath1</c5>
+        <c6>BluePath1</c6>
     </room>
     <room>
         <name>StartingPoint</name>
         <description>Starting point once the player revisits the area after already being in the game</description>
         <story_text>You're back where you first found yourself after entering the void.
         Where do you want to go?</story_text>
-        <visible_buttons>5</visible_buttons>
+        <visible_buttons>6</visible_buttons>
         <btn1_text>to Frogger</btn1_text>
         <btn2_text>to Snake</btn2_text>
         <btn3_text>to Space Invaders</btn3_text>
         <btn4_text>to Brick Breaker</btn4_text>
         <btn5_text>Ticket Counter</btn5_text>
+        <btn6_text>to Pacman</btn6_text>
         <c1>GreenPath1</c1>
         <c2>PurplePath1</c2>
         <c3>GoldPath1</c3>
         <c4>RedPath1</c4>
         <c5>PrizePath1</c5>
+        <c6>BluePath1</c6>
     </room>
     <room>
         <name>PurplePath1</name>
@@ -89,11 +97,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>SnakeTerminal</c1>
         <c2>StartingPoint</c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>SnakeTerminal</name>
@@ -107,11 +117,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1></c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>SnakeTerminalEnd</name>
@@ -123,11 +135,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>GreenPath1</name>
@@ -139,11 +153,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>FroggerTerminal</c1>
         <c2>StartingPoint</c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>FroggerTerminal</name>
@@ -157,11 +173,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1></c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>FroggerTerminalEnd</name>
@@ -175,11 +193,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
         <c2/>
         <c3/>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>GoldPath1</name>
@@ -191,11 +211,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>SpaceInvaderTerminal</c1>
         <c2>StartingPoint</c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>SpaceInvaderTerminal</name>
@@ -209,11 +231,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1></c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>SpaceInvaderTerminalEnd</name>
@@ -227,11 +251,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
         <c2/>
         <c3/>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>RedPath1</name>
@@ -243,11 +269,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>BrickBreakerTerminal</c1>
         <c2>StartingPoint</c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>BrickBreakerTerminal</name>
@@ -259,11 +287,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1></c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>BrickBreakerTerminalEnd</name>
@@ -277,11 +307,71 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
         <c2/>
         <c3/>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
+    </room>
+    <room>
+        <name>BluePath1</name>
+        <description>Empty room</description>
+        <story_text>You see a faint glimpse of blue light in the distance.</story_text>
+        <visible_buttons>2</visible_buttons>
+        <btn1_text>Keep going toward the blue light</btn1_text>
+        <btn2_text>Head back to your starting point</btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
+        <c1>PacmanTerminal</c1>
+        <c2>StartingPoint</c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
+        <c6></c6>
+    </room>
+    <room>
+        <name>PacmanTerminal</name>
+        <description>MiniGame that gives key upon completion before you earn key</description>
+        <story_text>A small, neon gold gaming terminal appears in front of you. It looks exactly like a normal arcade game, but pixelated. On the screen appears a familiar theme--a long snake eating a block, however the snake's body looks distorted. There are controllers beneath the screen.
+
+            After grabbing the controllers, you hear the same sounds that warped all around you before! You close your eyes in fear, and when you open them you see a familiar block in the distance. The snake is nowhere to be seen! You take one step forward to get a better look and you slither! Looking down in disbelief, you are completely gold. You have become the space invader!</story_text>
+        <visible_buttons>0</visible_buttons>
+        <btn1_text></btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
+        <c1></c1>
+        <c2></c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
+        <c6></c6>
+    </room>
+    <room>
+        <name>PacmanTerminalEnd</name>
+        <description>MiniGame that gives key upon completion after you earn key</description>
+        <story_text> like the glitch has been fixed.
+
+            What do you want to do now?</story_text>
+        <visible_buttons>1</visible_buttons>
+        <btn1_text>Head back toward your starting point</btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
+        <c1>StartingPoint</c1>
+        <c2/>
+        <c3/>
+        <c4></c4>
+        <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>PrizePath1</name>
@@ -293,11 +383,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
         <c2>StartingPoint</c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>ExitDoor</name>
@@ -311,11 +403,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>GoldPath2</c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>ExitDoorWin</name>
@@ -329,10 +423,12 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1></c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
 </class>

@@ -6,7 +6,7 @@ import java.awt.Dimension;
 import java.io.IOException;
 
 public class Pacman {
-    public static void main(String[] args) {
+    public static void main() {
         MainFrame frame = new MainFrame();
 
         frame.setSize(700, 600);
