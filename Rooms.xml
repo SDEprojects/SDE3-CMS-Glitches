@@ -254,13 +254,45 @@
         <description>Empty room</description>
         <story_text>Ticket redeemer ahead</story_text>
         <visible_buttons>2</visible_buttons>
-        <btn1_text>Under construction. Head back to the main lobby</btn1_text>
+        <btn1_text>Redeem Tickets</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
-        <c1>StartingPoint</c1>
+        <c1>TicketCounterTerminal</c1>
         <c2>StartingPoint</c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>TicketCounterTerminal</name>
+        <description>Redeem tickets and exit game</description>
+        <story_text>Welcome to Prize Central, trade your tickets in for prizes!</story_text>
+        <visible_buttons>2</visible_buttons>
+        <btn1_text>Back to Arcade</btn1_text>
+        <btn2_text>Exit Arcade</btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>StartingPoint</c1>
+        <c2>ExitDoorWin</c2>
+        <c3></c3>
+        <c4></c4>
+        <c5></c5>
+    </room>
+    <room>
+        <name>TicketCounterTerminalEnd</name>
+        <description>Redeem tickets and exit game</description>
+        <story_text>Come back and win more prizes when you have time!</story_text>
+        <visible_buttons></visible_buttons>
+        <btn1_text>Back to Arcade</btn1_text>
+        <btn2_text></btn2_text>
+        <btn3_text></btn3_text>
+        <btn4_text></btn4_text>
+        <btn5_text></btn5_text>
+        <c1>StartingPoint</c1>
+        <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>

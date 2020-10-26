@@ -4,6 +4,8 @@ import com.SpaceInvaders.app.App;
 import com.SpaceInvaders.ui.GameMainFrame;
 import com.frogger.StartFroggerGame;
 import com.glitches.Rooms;
+import com.glitches.TicketCounter.GetPrize;
+import com.glitches.TicketCounter.TicketCounter;
 import com.glitches.models.Player;
 import com.glitches.models.Room;
 import com.snake.*;
@@ -160,6 +162,11 @@ class GlitchesGUI extends JFrame {
             // change the room to break out of this loop
             currentRoom = Rooms.getRoom("SpaceInvaderTerminalEnd");
             runGame();
+        } else if (currentRoom.getName().equals("TicketCounterTerminal")) {
+            textArea.setText(currentRoom.getStoryText());
+            runTicketCounter();
+            currentRoom = Rooms.getRoom("GoldPath2");
+            runGame();
         } else if (currentRoom.getName().equals("GoldPath2")) {
             // checks if player has two Keys in inventory
             if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
@@ -170,7 +177,7 @@ class GlitchesGUI extends JFrame {
                 textArea.setText(currentRoom.getStoryText());
             }
         } else {
-            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets());
+            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets() + " .  Inventory : " + player.getInventory());
         }
         // take the currentRoom's buttons and display
         setVisibleButtons(currentRoom.getVisibleButtons());
@@ -192,6 +199,10 @@ class GlitchesGUI extends JFrame {
 
     public void runSpaceInvaders() {
         App.main(new GameMainFrame());}
+
+    public void runTicketCounter() {
+        GetPrize.main((player)); }
+
 
     public void initButtons() {
         choice1Button.addActionListener(choiceHandler);

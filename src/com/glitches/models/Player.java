@@ -23,8 +23,8 @@ public class Player {
         return inventory;
     }
 
-    public void setInventory(ArrayList<String> inventory) {
-        this.inventory = inventory;
+    public static void setInventory(ArrayList<String> inventory) {
+        inventory = inventory;
     }
 
     public void addToInventory(String key) { this.inventory.add(key); }
