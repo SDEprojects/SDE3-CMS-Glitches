@@ -3,6 +3,7 @@ package com.glitches.models;
 import java.util.ArrayList;
 
 public class Player {
+    //set to private
     String name;
     ArrayList<String> inventory = new ArrayList<>();
     public static int tickets;
