@@ -10,7 +10,6 @@ import java.awt.event.*;
 import java.util.Arrays;
 import java.util.Random;
 
-// DONE: Fixed the random shutdown bug! It's a great day to be alive!
 
 public class SnakePanel extends JPanel implements ActionListener {
 
@@ -100,9 +99,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     public void endGameMessage(Graphics g) { // This method will end the game, tell the player if they won or lost, then restart if needed.
         if (blocksEaten < 10) {
             // give tickets to player
-            int winnings = blocksEaten/2;
-            System.out.println("hello");
-            System.out.println(player.getName());
+            int winnings = blocksEaten;
             player.setTickets(winnings);
 
             // set the screen
@@ -116,7 +113,6 @@ public class SnakePanel extends JPanel implements ActionListener {
             g.setColor(Color.green);
             g.setFont(new Font("TimesRoman", Font.ITALIC, 30));
             g.drawString("You ate 10! Tickets rewarded:" + blocksEaten, 10, 100);
-            System.out.println("tickets won: " + blocksEaten);
         }
     }
 
@@ -162,7 +158,6 @@ public class SnakePanel extends JPanel implements ActionListener {
         // check to see if snake head position is overlapping part of your body
         for(int i = bodyParts; i>0; i--) {
             if((x[0] == x[i]) && (y[0] == y[i])) {
-
                 running = false;
             }
         }
