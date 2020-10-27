@@ -17,7 +17,7 @@ public class FroggerGame {
 
     public FroggerGame() {
 
-        status = FroggerGame.PLAYING;
+        status = PLAYING;
         reachedMiddle = false;
         lives = 3;
         frog = new Frog(frogX, frogY);
@@ -35,8 +35,7 @@ public class FroggerGame {
     }
 
     public void update() {
-        for (int u = 0; u < carLanes.length; u++)
-            carLanes[u].update();
+        for (CarLane carLane : carLanes) carLane.update();
         for (int y = 0; y < carLanes.length; y++)
             runChecks();
     }
@@ -70,7 +69,6 @@ public class FroggerGame {
     }
 
     void carCheck() {
-        //todo kills player when contacting car{
         if (CollisionDetector.CollisionDetector(this.getFrog(), this.getCarLanes())) {
             playerDeath();
         }

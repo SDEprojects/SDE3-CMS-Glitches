@@ -9,13 +9,13 @@ import javax.swing.*;
 
 public class GameMainFrame extends JFrame {
 
-    public GameMainFrame(Player player) {
-        initializeLayout(player);
+    public GameMainFrame() {
+        initializeLayout();
     }
 
-    private void initializeLayout(Player player) {
+    private void initializeLayout() {
 
-        add(new GamePanel(player));
+        add(new GamePanel());
 
         setTitle(Constants.Title);  // from Constants Class
 

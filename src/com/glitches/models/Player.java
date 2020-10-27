@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Player {
     //set to private
-    String name;
-    ArrayList<String> inventory = new ArrayList<>();
-    int tickets = 0;
+    public static String name;
+    public ArrayList<String> inventory = new ArrayList<>();
+    public static int tickets = 0;
 
     // CTOR
     public Player() {}
@@ -17,7 +17,7 @@ public class Player {
     }
 
     public void setName(String name) {
-        this.name = name;
+        Player.name = name;
     }
 
     public ArrayList<String> getInventory() {
@@ -35,6 +35,6 @@ public class Player {
     }
 
     public void setTickets(int tickets) {
-        this.tickets += tickets;
+       Player.tickets += tickets;
     }
 }

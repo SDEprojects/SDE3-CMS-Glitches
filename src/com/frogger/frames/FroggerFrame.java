@@ -9,7 +9,7 @@ import java.awt.event.KeyEvent;
 
 public class FroggerFrame extends JFrame {
 
-    public FroggerFrame(Player player) {
+    public FroggerFrame() {
 
         super("Frogger");
         InputMap im = getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
@@ -28,18 +28,20 @@ public class FroggerFrame extends JFrame {
         setLocationRelativeTo(null);
         setUndecorated(true);
         pack();
-        FroggerPanel panel = new FroggerPanel(player) {
+
+        FroggerPanel panel = new FroggerPanel() {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
 
             }
         };
+
         Insets frameInsets = getInsets();
         int frameWidth = panel.getWidth() + (frameInsets.left + frameInsets.right);
         int frameHeight = panel.getHeight() + (frameInsets.top + frameInsets.bottom);
         setPreferredSize(new Dimension(frameWidth, frameHeight));
         setLayout(null);
-        add(panel);
+        this.add(panel);
         pack();
         setVisible(true);
     }

@@ -207,19 +207,19 @@ class GlitchesGUI extends JFrame {
     }
 
     public void runSnake() {
-      SnakeMiniGame.main(player);
+      SnakeMiniGame.main();
     }
 
     public void runFrogger() {
-        StartFroggerGame.main(player);
+        StartFroggerGame.main();
     }
 
     public void runBrickBreaker() {
-
         StartBrickBreaker.main();
     }
+
     public void runSpaceInvaders() {
-        App.main(player);
+        App.main();
     }
     public void runPacman(){
         Pacman.main();

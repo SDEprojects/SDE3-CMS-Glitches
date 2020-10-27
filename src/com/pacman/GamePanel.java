@@ -22,6 +22,7 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
     boolean running = false;
     int totalFood;
     int score;
+    int hault = 0;
 
     public GamePanel() {
         startGame();
@@ -51,14 +52,12 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
 
     public void checkAllFoodEaten() {
         if(foods.isEmpty()){
-            score = totalFood;
             running = false;
         }
     }
 
     public void deadByGhost() {
         running = false;
-        score = totalFood - foods.size();
     }
 
     public void makeGhosts() {
@@ -148,23 +147,28 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
     }
 
     public void paint(Graphics g) {
-        if(running){
-            super.paint(g);
+        if(hault==0) {
+            if(running){
+                super.paint(g);
 
-            Graphics2D gtd = (Graphics2D)g;
-            hero.draw(gtd);
-            for(Wall wall: walls) wall.draw(gtd);
-            for(Ghost ghost: ghosts) ghost.draw(gtd);
-            for(Food food: foods) food.draw(gtd);
-        } else {
-            endGameMessage(g);
-            gameTimer.cancel();
+                Graphics2D gtd = (Graphics2D)g;
+                hero.draw(gtd);
+                for(Wall wall: walls) wall.draw(gtd);
+                for(Ghost ghost: ghosts) ghost.draw(gtd);
+                for(Food food: foods) food.draw(gtd);
+            } else {
+                hault++;
+                endGameMessage(g);
+                gameTimer.cancel();
+            }
         }
     }
 
     public void endGameMessage(Graphics g) { // This method will end the game, tell the player if they won or lost, then restart if needed.
             // set the screen
             g.setColor(Color.green);
+            score = totalFood - foods.size();
+            Player.tickets += score;
             g.setFont(new Font("TimesRoman", Font.ITALIC, 40));
             g.drawString("You lose. Tickets rewarded: " + score, 20, 150);
     }

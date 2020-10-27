@@ -33,11 +33,9 @@ public class GamePanel extends JPanel {
     private Timer timer;
     private com.paceInvaders.models.Spaceship spaceship;
     private boolean inGame = true;
-    Player player;
 
 
-    public GamePanel(Player player) {
-        this.player = player;
+    public GamePanel() {
         initializeVariables();
         initializeGame();
         initializeLayout();
@@ -198,7 +196,7 @@ public class GamePanel extends JPanel {
                     laser.die();
                     deaths++;
                     score++;
-                    player.setTickets(1);
+                    Player.tickets += 1;
                 }
             }
             this.laser.move();
