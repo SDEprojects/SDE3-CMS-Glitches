@@ -5,48 +5,34 @@ import com.glitches.models.Player;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
 public class GetPrize {
-    public static void main(Player player) {
-        //getting # tickets earned by player
-        int tickets = Player.getTickets();
-        ArrayList<String> showPrize = new ArrayList<>();
-        // testing array
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
-//        showPrize.add("fingertrap");
-//        showPrize.add("PS4");
-//        showPrize.add("drone");
 
+    public static int tickets = Player.getTickets();
+    public static ArrayList<String> showPrize = new ArrayList<>();
+    public static PrizeHandler prizeHandler = new PrizeHandler();
+
+    public static ImageIcon fingertrap = new ImageIcon("src/com/glitches/TicketCounter/prizes/fingerTrap.jpg");
+    public static ImageIcon stickyhand = new ImageIcon("src/com/glitches/TicketCounter/prizes/stickyHand.jpg");
+    public static ImageIcon recorder = new ImageIcon("src/com/glitches/TicketCounter/prizes/recorder.jpg");
+    public static ImageIcon bounceball = new ImageIcon("src/com/glitches/TicketCounter/prizes/superBounceBall.jpg");
+    public static ImageIcon pokemonCards = new ImageIcon("src/com/glitches/TicketCounter/prizes/pokemonCards.jpg");
+    public static ImageIcon drone = new ImageIcon("src/com/glitches/TicketCounter/prizes/drone.jpg");
+    public static ImageIcon gopro = new ImageIcon("src/com/glitches/TicketCounter/prizes/goPro.jpg");
+    public static ImageIcon ps5 = new ImageIcon("src/com/glitches/TicketCounter/prizes/PS5Bundle.jpg");
+    public static ImageIcon xbox = new ImageIcon("src/com/glitches/TicketCounter/prizes/XboxBundle.jpg");
+
+    public static void main(Player player) {
         // making a new JFrame
         JFrame frame = new JFrame("Ticket Counter");
+        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        frame.setSize(1000, 975);
+        frame.setBackground(Color.BLACK);
+        frame.setVisible(true);
 
         //making 1 JPanel with BorderLayout for Text
         JPanel TextBox = new JPanel(new BorderLayout());
@@ -73,32 +59,11 @@ public class GetPrize {
         //adding JLabel to JPanel
         TextBox1.add(list);
 
-
-        // prize pictures locations
-        ImageIcon fingertrap = new ImageIcon("src/com/glitches/TicketCounter/prizes/fingerTrap.jpg");
-        ImageIcon stickyhand = new ImageIcon("src/com/glitches/TicketCounter/prizes/stickyHand.jpg");
-        ImageIcon recorder = new ImageIcon("src/com/glitches/TicketCounter/prizes/recorder.jpg");
-        ImageIcon bounceball = new ImageIcon("src/com/glitches/TicketCounter/prizes/superBounceBall.jpg");
-        ImageIcon pokemonCards = new ImageIcon("src/com/glitches/TicketCounter/prizes/pokemonCards.jpg");
-        ImageIcon drone = new ImageIcon("src/com/glitches/TicketCounter/prizes/drone.jpg");
-        ImageIcon gopro = new ImageIcon("src/com/glitches/TicketCounter/prizes/goPro.jpg");
-        ImageIcon ps5 = new ImageIcon("src/com/glitches/TicketCounter/prizes/PS5Bundle.jpg");
-        ImageIcon xbox = new ImageIcon("src/com/glitches/TicketCounter/prizes/XboxBundle.jpg");
-
-
         //adding buttons  with mouse Listener  for 2nd JPanel
         JButton p1 = new JButton("5", fingertrap);
-        p1.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-                showPrize.add("Finger Trap");
-                System.out.println(showPrize);
-
-            }
-        });
+        p1.addActionListener(prizeHandler);
+        p1.setActionCommand("p1");
         JButton p2 = new JButton("10", stickyhand);
-        //p2.addMouseListener(new MouseListener());
         JButton p3 = new JButton("15", recorder);
         JButton p4 = new JButton("20", bounceball);
         JButton p5 = new JButton("25", pokemonCards);
@@ -123,31 +88,38 @@ public class GetPrize {
         TicketPanel.add(p9);
 
 
-        //frame settings  the frame is border layout, the jbuttons panel is gridlayout
-        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-        frame.setSize(1000, 975);
-        frame.setBackground(Color.BLACK);
+//        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+//        frame.setSize(1000, 975);
+//        frame.setBackground(Color.BLACK);
+//        frame.setVisible(true);
         frame.getContentPane().add(TextBox, BorderLayout.NORTH);
         frame.getContentPane().add(TicketPanel, BorderLayout.CENTER);
         frame.getContentPane().add(TextBox1, BorderLayout.SOUTH);
-        frame.setVisible(true);
 
-        //check();
 
-//        private static void check(tickets) {
-//                if (player.getTickets() >= 5) {
-//                    switch (e.MouseEvent) {
-//                        case p1:
-//                            showPrize.add("Finger Trap");
-//                            break;
-//                        case p2:
-//                            showPrize.add("Sticky Hand");
-//                            break;
-//                    }
-//                } else {
-//                    System.out.println("not enough tickets");
-//                }
-//            }
+    }
 
+    public static class PrizeHandler implements ActionListener{
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            switch (e.getActionCommand()) {
+                case "p1":
+                    if (tickets >= 5) {
+                    showPrize.add("Does this work");
+                    tickets -= 5;
+                    tickets = Player.setTickets();
+                    System.out.println(showPrize);
+                        System.out.println(tickets);}
+                    else {
+                        System.out.println("not enough tickets");}
+                    break;
+                case "p2":
+                    showPrize.add("2");
+                    tickets -= 10;
+                    System.out.println(showPrize);
+                    break;
+            }
         }
+    }
 }

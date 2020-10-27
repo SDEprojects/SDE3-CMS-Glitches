@@ -1,12 +1,10 @@
 package com.glitches.ui;
 
 import com.SpaceInvaders.app.App;
-import com.SpaceInvaders.ui.GameMainFrame;
 import com.brickbreaker.StartBrickBreaker;
 import com.frogger.StartFroggerGame;
 import com.glitches.Rooms;
 import com.glitches.TicketCounter.GetPrize;
-import com.glitches.TicketCounter.TicketCounter;
 import com.glitches.models.Player;
 import com.glitches.models.Room;
 import com.pacman.Pacman;
@@ -193,13 +191,10 @@ class GlitchesGUI extends JFrame {
             runPacman();
             currentRoom = Rooms.getRoom("PacmanTerminalEnd");
             runGame();
-        }
-        else{
-            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets());
         } else if (currentRoom.getName().equals("TicketCounterTerminal")) {
             textArea.setText(currentRoom.getStoryText());
             runTicketCounter();
-            currentRoom = Rooms.getRoom("GoldPath2");
+            currentRoom = Rooms.getRoom("TicketCounterTerminalEnd");
             runGame();
         } else if (currentRoom.getName().equals("GoldPath2")) {
             // checks if player has two Keys in inventory
@@ -242,7 +237,7 @@ class GlitchesGUI extends JFrame {
     public void runPacman(){
         Pacman.main();
     }
-        App.main(new GameMainFrame());}
+
 
     public void runTicketCounter() {
         GetPrize.main((player)); }

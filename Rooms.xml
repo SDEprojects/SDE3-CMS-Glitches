@@ -389,6 +389,7 @@
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>TicketCounterTerminal</name>
@@ -400,11 +401,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
         <c2>ExitDoorWin</c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
     </room>
     <room>
         <name>TicketCounterTerminalEnd</name>
@@ -416,11 +419,13 @@
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
+        <btn6></btn6>
         <c1>StartingPoint</c1>
         <c2></c2>
         <c3></c3>
         <c4></c4>
         <c5></c5>
+        <c6></c6>
         <c6></c6>
     </room>
     <room>
