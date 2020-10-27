@@ -80,6 +80,7 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
             repaint();
             try {
                 if ((FroggerGame.WIN) || (FroggerGame.DEAD)) {
+                    player.setTickets(score);
                     YouWin youWin = new YouWin(true, 0, player); //
                     youWin.setBounds(0, 0, WIDTH, HEIGHT);
                     this.getParent().getParent().add(youWin, 0);
@@ -105,28 +106,24 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
                         game.getFrog().setY(game.getFrog().getY() - 40);
                     game.getFrog().setDirection(Frog.UP);
                     score++;
-                    player.setTickets(score/2);
                     break;
                 case KeyEvent.VK_DOWN:
                     if ((game.getFrog().getY() + 40) < getHeight() - 100)
                         game.getFrog().setY(game.getFrog().getY() + 40);
                     game.getFrog().setDirection(Frog.DOWN);
                     score++;
-                    player.setTickets(score/2);
                     break;
                 case KeyEvent.VK_LEFT:
                     if ((game.getFrog().getX() - 30) > 0)
                         game.getFrog().setX(game.getFrog().getX() - 40);
                     game.getFrog().setDirection(Frog.LEFT);
                     score++;
-                    player.setTickets(score/2);
                     break;
                 case KeyEvent.VK_RIGHT:
                     if ((game.getFrog().getX() + 40) < getWidth() - 30)
                         game.getFrog().setX(game.getFrog().getX() + 40);
                     game.getFrog().setDirection(Frog.RIGHT);
                     score++;
-                    player.setTickets(score/2);
                     break;
             }
         }
