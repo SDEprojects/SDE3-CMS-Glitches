@@ -169,8 +169,6 @@ class GlitchesGUI extends JFrame {
             //change the room to break out of this loop
             currentRoom = Rooms.getRoom("BrickBreakerTerminalEnd");
             runGame();
-        } else{
-            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets());
         } else if (currentRoom.getName().equals("TicketCounterTerminal")) {
             textArea.setText(currentRoom.getStoryText());
             runTicketCounter();

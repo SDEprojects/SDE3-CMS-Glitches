@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -16,33 +17,33 @@ public class GetPrize {
         int tickets = Player.getTickets();
         ArrayList<String> showPrize = new ArrayList<>();
         // testing array
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
-        showPrize.add("fingertrap");
-        showPrize.add("PS4");
-        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
+//        showPrize.add("fingertrap");
+//        showPrize.add("PS4");
+//        showPrize.add("drone");
 
         // making a new JFrame
         JFrame frame = new JFrame("Ticket Counter");
@@ -52,9 +53,8 @@ public class GetPrize {
 
         //making the JLabel inside of the first JPanel
         JLabel text = new JLabel();
-        //String prizes = Arrays.toString(showPrize.toArray()).replace("[","").replace("]", "");
         //using <html> tags allows text to wrap
-        text.setText("<html>You have " + tickets + " remaining.");   //Prizes selected: " + prizes + ".</html>");
+        text.setText("<html>You have " + tickets + " remaining.");
         text.setHorizontalAlignment(SwingConstants.CENTER);
         text.setVerticalAlignment(SwingConstants.CENTER);
         text.setFont(new Font("TimesRoman", Font.BOLD, 20));
@@ -65,9 +65,8 @@ public class GetPrize {
 
         //making the JLabel inside of the first JPanel
         JLabel list = new JLabel();
-        String prizes = Arrays.toString(showPrize.toArray()).replace("[", "").replace("]", "");
         //using <html> tags allows text to wrap
-        list.setText("<html>Prizes selected: " + prizes + ".</html>");
+        list.setText("<html>Prizes selected: " + showPrize + ".</html>");
         list.setHorizontalAlignment(SwingConstants.CENTER);
         list.setVerticalAlignment(SwingConstants.CENTER);
         list.setFont(new Font("TimesRoman", Font.BOLD, 20));
@@ -93,15 +92,13 @@ public class GetPrize {
             @Override
             public void mouseClicked(MouseEvent e) {
                 super.mouseClicked(e);
+                showPrize.add("Finger Trap");
+                System.out.println(showPrize);
+
             }
         });
         JButton p2 = new JButton("10", stickyhand);
-        p2.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                super.mouseClicked(e);
-            }
-        });
+        //p2.addMouseListener(new MouseListener());
         JButton p3 = new JButton("15", recorder);
         JButton p4 = new JButton("20", bounceball);
         JButton p5 = new JButton("25", pokemonCards);
@@ -135,24 +132,22 @@ public class GetPrize {
         frame.getContentPane().add(TextBox1, BorderLayout.SOUTH);
         frame.setVisible(true);
 
-        player.setInventory(showPrize);
+        //check();
 
-        check();
-
-        private static void check(tickets) {
-                if (player.getTickets() >= 5) {
-                    switch (e.MouseEvent) {
-                        case p1:
-                            showPrize.add("Finger Trap");
-                            break;
-                        case p2:
-                            showPrize.add("Sticky Hand");
-                            break;
-                    }
-                } else {
-                    System.out.println("not enough tickets");
-                }
-            }
+//        private static void check(tickets) {
+//                if (player.getTickets() >= 5) {
+//                    switch (e.MouseEvent) {
+//                        case p1:
+//                            showPrize.add("Finger Trap");
+//                            break;
+//                        case p2:
+//                            showPrize.add("Sticky Hand");
+//                            break;
+//                    }
+//                } else {
+//                    System.out.println("not enough tickets");
+//                }
+//            }
 
         }
 }
