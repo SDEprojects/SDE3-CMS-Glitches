@@ -30,6 +30,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
     private int ballPosY = 350;
     private int ballDirX = getRandomNumberForX();
     private int ballDirY = getRandomNumberForY();
+    private String TICKETS = "Total tickets won!: " + score;
 
     private BrickFrame mapPlay;
 
@@ -126,6 +127,8 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
             graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
 
         }
+        TICKETS;
+
         graphics.dispose();
 
     }
