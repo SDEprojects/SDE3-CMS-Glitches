@@ -10,16 +10,16 @@
         <visible_buttons>2</visible_buttons>
         <btn1_text>Yes</btn1_text>
         <btn2_text>No</btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>StartingPoint0</c1>
         <c2>StartingPoint0.5</c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>StartingPoint0.5</name>
@@ -30,15 +30,15 @@
         <btn1_text>You feel strange!</btn1_text>
         <btn2_text/>
         <btn3_text/>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>StartingPoint0</c1>
-        <c2></c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c2/>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>StartingPoint0</name>
@@ -94,16 +94,16 @@
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the purple light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>SnakeTerminal</c1>
         <c2>StartingPoint</c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>SnakeTerminal</name>
@@ -112,18 +112,18 @@
 
             After grabbing the controllers, you hear the same sounds that warped all around you before! You close your eyes in fear, and when you open them you see a familiar block in the distance. The snake is nowhere to be seen! You take one step forward to get a better look and you slither! Looking down in disbelief, you are completely purple. You have become the snake!</story_text>
         <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <btn1_text/>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
+        <c1/>
+        <c2/>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>SnakeTerminalEnd</name>
@@ -131,17 +131,17 @@
         <story_text>Finish gathering your points from Snake before you even decide to go back to the starting point.</story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>Head back toward your starting point</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>StartingPoint</c1>
-        <c2></c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c2/>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>GreenPath1</name>
@@ -150,16 +150,16 @@
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the green light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>FroggerTerminal</c1>
         <c2>StartingPoint</c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>FroggerTerminal</name>
@@ -168,18 +168,18 @@
 
             What do you want to do?</story_text>
         <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <btn1_text/>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
+        <c1/>
+        <c2/>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>FroggerTerminalEnd</name>
@@ -189,17 +189,17 @@
             What do you want to do now?</story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>Head back toward your starting point</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>StartingPoint</c1>
         <c2/>
         <c3/>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>GoldPath1</name>
@@ -208,16 +208,16 @@
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the gold light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>SpaceInvaderTerminal</c1>
         <c2>StartingPoint</c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>SpaceInvaderTerminal</name>
@@ -226,18 +226,18 @@
 
             After grabbing the controllers, you hear the same sounds that warped all around you before! You close your eyes in fear, and when you open them you see a familiar block in the distance. The snake is nowhere to be seen! You take one step forward to get a better look and you slither! Looking down in disbelief, you are completely gold. You have become the space invader!</story_text>
         <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <btn1_text/>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
+        <c1/>
+        <c2/>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>SpaceInvaderTerminalEnd</name>
@@ -247,17 +247,17 @@
             What do you want to do now?</story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>Head back toward your starting point</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>StartingPoint</c1>
         <c2/>
         <c3/>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>RedPath1</name>
@@ -266,34 +266,34 @@
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the red light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>BrickBreakerTerminal</c1>
         <c2>StartingPoint</c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>BrickBreakerTerminal</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
         <story_text>BrickBreaker game</story_text>
         <visible_buttons>0</visible_buttons>
-        <btn1_text></btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
-        <c1></c1>
-        <c2></c2>
-        <c3></c3>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <btn1_text/>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
+        <c1/>
+        <c2/>
+        <c3/>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>BrickBreakerTerminalEnd</name>
@@ -303,17 +303,17 @@
             What do you want to do now?</story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>Head back toward your starting point</btn1_text>
-        <btn2_text></btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
-        <btn5_text></btn5_text>
-        <btn6_text></btn6_text>
+        <btn2_text/>
+        <btn3_text/>
+        <btn4_text/>
+        <btn5_text/>
+        <btn6_text/>
         <c1>StartingPoint</c1>
         <c2/>
         <c3/>
-        <c4></c4>
-        <c5></c5>
-        <c6></c6>
+        <c4/>
+        <c5/>
+        <c6/>
     </room>
     <room>
         <name>BluePath1</name>
@@ -322,8 +322,8 @@
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the blue light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
-        <btn3_text></btn3_text>
-        <btn4_text></btn4_text>
+        <btn3_text/>
+        <btn4_text/>
         <btn5_text></btn5_text>
         <btn6_text></btn6_text>
         <c1>PacmanTerminal</c1>
@@ -413,7 +413,7 @@
         <name>TicketCounterTerminalEnd</name>
         <description>Redeem tickets and exit game</description>
         <story_text>Come back and win more prizes when you have time!</story_text>
-        <visible_buttons></visible_buttons>
+        <visible_buttons>1</visible_buttons>
         <btn1_text>Back to Arcade</btn1_text>
         <btn2_text></btn2_text>
         <btn3_text></btn3_text>

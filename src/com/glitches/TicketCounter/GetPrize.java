@@ -12,7 +12,7 @@ import java.util.Arrays;
 
 public class GetPrize {
 
-    public static int tickets = Player.getTickets();
+//    public static int tickets = Player.tickets;
     public static ArrayList<String> showPrize = new ArrayList<>();
     public static PrizeHandler prizeHandler = new PrizeHandler();
 
@@ -40,7 +40,7 @@ public class GetPrize {
         //making the JLabel inside of the first JPanel
         JLabel text = new JLabel();
         //using <html> tags allows text to wrap
-        text.setText("<html>You have " + tickets + " remaining.");
+        text.setText("<html>You have " + Player.tickets + " remaining.");
         text.setHorizontalAlignment(SwingConstants.CENTER);
         text.setVerticalAlignment(SwingConstants.CENTER);
         text.setFont(new Font("TimesRoman", Font.BOLD, 20));
@@ -105,18 +105,18 @@ public class GetPrize {
         public void actionPerformed(ActionEvent e) {
             switch (e.getActionCommand()) {
                 case "p1":
-                    if (tickets >= 5) {
+                    if (Player.tickets >= 5) {
                     showPrize.add("Does this work");
-                    tickets -= 5;
-                    tickets = Player.setTickets();
+                    Player.tickets -= 5;
+//                    tickets = Player.setTickets();
                     System.out.println(showPrize);
-                        System.out.println(tickets);}
+                        System.out.println(Player.tickets);}
                     else {
                         System.out.println("not enough tickets");}
                     break;
                 case "p2":
                     showPrize.add("2");
-                    tickets -= 10;
+                    Player.tickets -= 10;
                     System.out.println(showPrize);
                     break;
             }
