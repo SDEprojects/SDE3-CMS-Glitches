@@ -15,7 +15,6 @@ public class GetPrize {
 //    public static int tickets = Player.tickets;
     public static ArrayList<String> showPrize = new ArrayList<>();
     public static PrizeHandler prizeHandler = new PrizeHandler();
-    public JLabel list = new JLabel();
 
     // images
     public static ImageIcon fingertrap = new ImageIcon("src/com/glitches/TicketCounter/prizes/fingerTrap.jpg");
@@ -28,12 +27,7 @@ public class GetPrize {
     public static ImageIcon ps5 = new ImageIcon("src/com/glitches/TicketCounter/prizes/PS5Bundle.jpg");
     public static ImageIcon xbox = new ImageIcon("src/com/glitches/TicketCounter/prizes/XboxBundle.jpg");
 
-    public GetPrize(){
-
-    }
-
-    public static void welcome() {
-//        GetPrizeFrame frame = new GetPrizeFrame();
+    public static void main(Player player) {
         // making a new JFrame
         JFrame frame = new JFrame("Ticket Counter");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -43,21 +37,21 @@ public class GetPrize {
 
         //making 1 JPanel with BorderLayout for Text
         JPanel TextBox = new JPanel(new BorderLayout());
-        //making the JLabel inside of the first JPanel
 
-        JLabel text = updateText();
+        //making the JLabel inside of the first JPanel
+        JLabel text = new JLabel();
         //using <html> tags allows text to wrap
-//        text.setText("<html>You have " + Player.tickets + " remaining.");
-//        text.setHorizontalAlignment(SwingConstants.CENTER);
-//        text.setVerticalAlignment(SwingConstants.CENTER);
-//        text.setFont(new Font("TimesRoman", Font.BOLD, 20));
+        text.setText("<html>You have " + tickets + " remaining.");
+        text.setHorizontalAlignment(SwingConstants.CENTER);
+        text.setVerticalAlignment(SwingConstants.CENTER);
+        text.setFont(new Font("TimesRoman", Font.BOLD, 20));
         //adding JLabel to JPanel
         TextBox.add(text);
 
         JPanel TextBox1 = new JPanel(new BorderLayout());
 
         //making the JLabel inside of the first JPanel
-//        JLabel list = new JLabel();
+        JLabel list = new JLabel();
         //using <html> tags allows text to wrap
         list.setText("<html>Prizes selected: " + showPrize + ".</html>");
         list.setHorizontalAlignment(SwingConstants.CENTER);
@@ -103,21 +97,7 @@ public class GetPrize {
         frame.getContentPane().add(TicketPanel, BorderLayout.CENTER);
         frame.getContentPane().add(TextBox1, BorderLayout.SOUTH);
 
-    }
 
-    public static void reset(){
-
-    }
-
-    public static JLabel updateText(){
-        //making the JLabel inside of the first JPanel
-        JLabel text = new JLabel();
-        //using <html> tags allows text to wrap
-        text.setText("<html>You have " + Player.tickets + " remaining.");
-        text.setHorizontalAlignment(SwingConstants.CENTER);
-        text.setVerticalAlignment(SwingConstants.CENTER);
-        text.setFont(new Font("TimesRoman", Font.BOLD, 20));
-        return text;
     }
 
     public static class PrizeHandler implements ActionListener{
