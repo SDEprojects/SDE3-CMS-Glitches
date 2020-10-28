@@ -1,4 +1,4 @@
-package com.paceInvaders.models;
+package com.SpaceInvaders.models;
 
 import com.SpaceInvaders.constants.Constants;
 import com.SpaceInvaders.image.Image;
