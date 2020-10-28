@@ -1,5 +1,6 @@
 package com.brickbreaker;
-import javax.swing.JFrame;
+import javax.swing.*;
+
 import com.glitches.models.Player;
 
 public class StartBrickBreaker {
@@ -11,7 +12,8 @@ public class StartBrickBreaker {
         obj.setTitle("Brick Breaker");
         obj.setResizable(false);
         obj.setVisible(true);
-        obj.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        obj.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         obj.add(gamePlay);
+        //pass in tickets
     }
 }
