@@ -19,18 +19,18 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
     private boolean play = false;
     public int score = 0;
 
-    private int totalBricks = 40;
+    private int totalBricks = 16;
 
     private Timer timer;
     private int delay = 10;
 
-    private int playerX = 30;
+    private int playerX = 300;
 
     private int ballPosX = 290;
     private int ballPosY = 350;
     private int ballDirX = getRandomNumberForX();
     private int ballDirY = getRandomNumberForY();
-    private String TICKETS = "Total tickets won!: " + score;
+    //private String TICKETS = "Total tickets won!: " + score;
 
     private BrickFrame mapPlay;
 
@@ -51,7 +51,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
         graphics.fillRect(1, 1, 690, 590);
 
         //drawing map of bricks
-        mapPlay.draw((Graphics2D) graphics, Color.YELLOW);
+        mapPlay.draw((Graphics2D) graphics, Color.CYAN);
 
         //border
         graphics.setColor(Color.yellow);
@@ -66,13 +66,13 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
         //paddle
         graphics.setColor(Color.green);
-        graphics.fillRect(playerX, 550, 100, 8);
+        graphics.fillRect(playerX, 550, 150, 8);
 
         if (!play) {
             //game start message
             graphics.setColor(Color.YELLOW);
             graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+            graphics.drawString("Press Enter to start the game!", 90, 350);
 
             //ball hiding
             graphics.setColor(Color.black);
@@ -82,15 +82,15 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
         }
         graphics.fillOval(ballPosX, ballPosY, 20, 20);
         //ball color & size change
-        if (score >= 50 && score < 100) {
+        if (score >= 20 && score < 50) {
 
             graphics.setColor(Color.yellow);
             graphics.fillOval(ballPosX, ballPosY, 21, 21);
-        } else if (score >= 100 && score < 150) {
+        } else if (score >= 50 && score < 75) {
             //ball
             graphics.setColor(Color.orange);
             graphics.fillOval(ballPosX, ballPosY, 22, 22);
-        } else if (score >= 150) {
+        } else if (score >= 75) {
             //ball
             graphics.setColor(Color.red);
             graphics.fillOval(ballPosX, ballPosY, 23, 23);
@@ -107,6 +107,10 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
             graphics.setColor(Color.RED);
             graphics.setFont(new Font("serif", Font.BOLD, 20));
+            graphics.drawString("You Win! Score: " + score, 200,300);
+
+            graphics.setColor(Color.YELLOW);
+            graphics.setFont(new Font("serif", Font.BOLD, 20));
             graphics.drawString("Press Enter to Restart..", 230, 230);
 
             //above score hiding
@@ -122,12 +126,43 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
             graphics.fillRect(playerX, 550, 100, 8);
 
             //start message
-            graphics.setColor(Color.BLACK);
-            graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+//            graphics.setColor(Color.BLACK);
+//            graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
+//            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
 
         }
-        TICKETS;
+        if (ballPosY > 570) { //ball fall down
+            play = false;
+            ballDirX = 0;
+            ballDirY = 0;
+
+            //hiding after game over
+            graphics.setColor(Color.black);
+            graphics.fillOval(ballPosX, ballPosY, 23, 23);
+
+            graphics.setColor(Color.RED);
+            graphics.setFont(new Font("serif", Font.BOLD, 30));
+            graphics.drawString("Game Over! Score: "+ score , 200, 300);
+
+            //above score hiding
+            graphics.setColor(Color.black);
+            graphics.setFont(new Font("serif", Font.BOLD, 22));
+            graphics.drawString("Score: " + score, 490,30);
+
+            //hide remains bricks
+            mapPlay.draw((Graphics2D) graphics, Color.BLACK);
+
+            //paddle
+            graphics.setColor(Color.black);
+            graphics.fillRect(playerX, 550, 100, 8);
+
+            //game start message
+//            graphics.setColor(Color.YELLOW);
+//            graphics.setFont(new Font("serif", Font.PLAIN, 25));
+//            graphics.drawString("Press Enter/LEFT/RIGHT arrow to start game!", 90, 350);
+
+        }
+        //TICKETS;
 
         graphics.dispose();
 
