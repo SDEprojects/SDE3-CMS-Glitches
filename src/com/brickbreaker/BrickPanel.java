@@ -1,5 +1,7 @@
 package com.brickbreaker;
 
+import com.glitches.models.Player;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -18,7 +20,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
     private boolean play = false;
     public int score = 0;
-
+    public int tickets = 0;
     private int totalBricks = 16;
 
     private Timer timer;
@@ -46,6 +48,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
     @Override
     public void paint(Graphics graphics) {
+
         //background
         graphics.setColor(Color.black);
         graphics.fillRect(1, 1, 690, 590);
@@ -107,7 +110,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
             graphics.setColor(Color.RED);
             graphics.setFont(new Font("serif", Font.BOLD, 20));
-            graphics.drawString("You Win! Score: " + score, 200,300);
+            graphics.drawString("You Win! You received: " + score +" tickets", 200,300);
 
             graphics.setColor(Color.YELLOW);
             graphics.setFont(new Font("serif", Font.BOLD, 20));
@@ -129,7 +132,6 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 //            graphics.setColor(Color.BLACK);
 //            graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
 //            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
-
         }
         if (ballPosY > 570) { //ball fall down
             play = false;
@@ -142,7 +144,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
             graphics.setColor(Color.RED);
             graphics.setFont(new Font("serif", Font.BOLD, 30));
-            graphics.drawString("Game Over! Score: "+ score , 200, 300);
+            graphics.drawString("Game Over! You received "+ score + " tickets" , 200, 300);
 
             //above score hiding
             graphics.setColor(Color.black);
@@ -163,7 +165,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
         }
         //TICKETS;
-
+        tickets += score;
         graphics.dispose();
 
     }
