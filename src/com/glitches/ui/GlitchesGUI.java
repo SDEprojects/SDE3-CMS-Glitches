@@ -160,7 +160,7 @@ class GlitchesGUI extends JFrame {
             textArea.setText(player.getName() + currentRoom.getStoryText());
         } else if (currentRoom.getName().equals("FroggerTerminal")) {
             textArea.setText(currentRoom.getStoryText());
-            player.addToInventory("Green Key");
+//            player.addToInventory("Green Key");
             // method that calls StartFroggerGame.main() method
             runFrogger();
             // change the room to break out of this loop
@@ -208,8 +208,10 @@ class GlitchesGUI extends JFrame {
         } else {
             textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets() + " .  Inventory : " + player.getInventory());
         }
+
         // take the currentRoom's buttons and display
         setVisibleButtons(currentRoom.getVisibleButtons());
+
         // set the text for the each btn with corresponding xml key
         choice1Button.setText(currentRoom.getBtn1Text());
         choice2Button.setText(currentRoom.getBtn2Text());
@@ -238,9 +240,9 @@ class GlitchesGUI extends JFrame {
         Pacman.main();
     }
 
-
     public void runTicketCounter() {
-        GetPrize.main((player)); }
+        GetPrize.welcome();
+    }
 
 
     public void initButtons() {

@@ -13,7 +13,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class FroggerPanel extends JPanel implements ActionListener, Runnable {
-    // Porperties
+    // Properties
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
     public int score;
