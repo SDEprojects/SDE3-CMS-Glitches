@@ -106,10 +106,10 @@ public class GetPrize {
             switch (e.getActionCommand()) {
                 case "p1":
                     if (tickets >= 5) {
-                        showPrize.add("Does this work");
-                        tickets -= 5;
-                        tickets = Player.setTickets();
-                        System.out.println(showPrize);
+                    showPrize.add("Does this work");
+                    tickets -= 5;
+                    tickets = Player.setTickets();
+                    System.out.println(showPrize);
                         System.out.println(tickets);}
                     else {
                         System.out.println("not enough tickets");}

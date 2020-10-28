@@ -1,7 +1,7 @@
 package com.SpaceInvaders.constants;
 
 import com.SpaceInvaders.ui.GamePanel;
-import com.frogger.frames.FroggerPanel;
+
 
 public class Constants {
 

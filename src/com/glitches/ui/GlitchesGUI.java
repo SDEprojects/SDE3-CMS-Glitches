@@ -1,10 +1,10 @@
 package com.glitches.ui;
 
 import com.SpaceInvaders.app.App;
-import com.SpaceInvaders.ui.GameMainFrame;
 import com.brickbreaker.StartBrickBreaker;
 import com.frogger.StartFroggerGame;
 import com.glitches.Rooms;
+import com.glitches.TicketCounter.GetPrize;
 import com.glitches.models.Player;
 import com.glitches.models.Room;
 import com.pacman.Pacman;
@@ -191,9 +191,22 @@ class GlitchesGUI extends JFrame {
             runPacman();
             currentRoom = Rooms.getRoom("PacmanTerminalEnd");
             runGame();
-        }
-        else{
-            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets());
+        } else if (currentRoom.getName().equals("TicketCounterTerminal")) {
+            textArea.setText(currentRoom.getStoryText());
+            runTicketCounter();
+            currentRoom = Rooms.getRoom("TicketCounterTerminalEnd");
+            runGame();
+        } else if (currentRoom.getName().equals("GoldPath2")) {
+            // checks if player has two Keys in inventory
+            if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
+                currentRoom = Rooms.getRoom("ExitDoorWin");
+                runGame();
+            } else {
+                currentRoom = Rooms.getRoom("ExitDoorWin");
+                textArea.setText(currentRoom.getStoryText());
+            }
+        } else {
+            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets() + " .  Inventory : " + player.getInventory());
         }
         // take the currentRoom's buttons and display
         setVisibleButtons(currentRoom.getVisibleButtons());
@@ -224,6 +237,12 @@ class GlitchesGUI extends JFrame {
     public void runPacman(){
         Pacman.main();
     }
+
+
+    public void runTicketCounter() {
+        GetPrize.main((player)); }
+
+
     public void initButtons() {
         choice1Button.addActionListener(choiceHandler);
         choice1Button.setActionCommand("c1");
