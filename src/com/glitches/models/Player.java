@@ -6,7 +6,7 @@ public class Player {
     //set to private
     String name;
     ArrayList<String> inventory = new ArrayList<>();
-    int tickets = 0;
+    public static int tickets;
 
     // CTOR
     public Player() {}
@@ -24,17 +24,17 @@ public class Player {
         return inventory;
     }
 
-    public void setInventory(ArrayList<String> inventory) {
-        this.inventory = inventory;
+    public static void setInventory(ArrayList<String> inventory) {
+        inventory = inventory;
     }
 
     public void addToInventory(String key) { this.inventory.add(key); }
 
-    public int getTickets() {
+    public static int getTickets() {
         return tickets;
     }
 
     public void setTickets(int tickets) {
-        this.tickets += tickets;
+        this.tickets = tickets;
     }
 }
