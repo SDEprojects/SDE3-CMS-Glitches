@@ -80,7 +80,6 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
         while (game.PLAYING == 0) {
             update();
             repaint();
-            // FroggerGame properties get saved. FroggerGame.DEAD still equals 'true'
             try {
                 if(endGame) {
                     Player.tickets += score;

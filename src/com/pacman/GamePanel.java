@@ -31,7 +31,7 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
         makeGhosts();
         makeFood();
         gameTimer = new Timer();
-        totalFood= foods.size(); // 139
+        totalFood = foods.size(); // 139
         gameTimer.schedule(new TimerTask() {
 
             @Override
