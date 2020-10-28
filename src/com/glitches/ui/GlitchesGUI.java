@@ -241,7 +241,7 @@ class GlitchesGUI extends JFrame {
     }
 
     public void runTicketCounter() {
-        GetPrize.welcome();
+        GetPrize.main();
     }
 
 

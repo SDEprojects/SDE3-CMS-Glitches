@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Player {
     //set to private
     public static String name;
-    public ArrayList<String> inventory = new ArrayList<>();
+    public static ArrayList<String> inventory = new ArrayList<>();
     public static int tickets = 0;
 
     // CTOR
@@ -25,7 +25,7 @@ public class Player {
     }
 
     public void setInventory(ArrayList<String> inventory) {
-        this.inventory = inventory;
+
     }
 
     public void addToInventory(String key) { this.inventory.add(key); }

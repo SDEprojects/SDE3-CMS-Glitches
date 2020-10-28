@@ -27,7 +27,7 @@ public class GetPrize {
     public static ImageIcon ps5 = new ImageIcon("src/com/glitches/TicketCounter/prizes/PS5Bundle.jpg");
     public static ImageIcon xbox = new ImageIcon("src/com/glitches/TicketCounter/prizes/XboxBundle.jpg");
 
-    public static void main(Player player) {
+    public static void main() {
         // making a new JFrame
         JFrame frame = new JFrame("Ticket Counter");
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -41,7 +41,7 @@ public class GetPrize {
         //making the JLabel inside of the first JPanel
         JLabel text = new JLabel();
         //using <html> tags allows text to wrap
-        text.setText("<html>You have " + tickets + " remaining.");
+        text.setText("<html>You have " + Player.tickets + " remaining.");
         text.setHorizontalAlignment(SwingConstants.CENTER);
         text.setVerticalAlignment(SwingConstants.CENTER);
         text.setFont(new Font("TimesRoman", Font.BOLD, 20));
@@ -111,7 +111,8 @@ public class GetPrize {
                         Player.tickets -= 5;
                         System.out.println(showPrize);
                         System.out.println(Player.tickets);
-                        runClerk();
+                        Player.inventory.add("Finger Trap");
+//                        runClerk();
                     } else {
                         System.out.println("not enough tickets");
                     }
@@ -121,8 +122,9 @@ public class GetPrize {
                         showPrize.add("Sticky Hand");
                         Player.tickets -= 10;
                         System.out.println(showPrize);
-                        System.out.println(Player.tickets);}
-                    else {
+                        System.out.println(Player.tickets);
+                        Player.inventory.add("Sticky Hand");
+                    } else {
                         System.out.println("not enough tickets");
                     }
                     break;
