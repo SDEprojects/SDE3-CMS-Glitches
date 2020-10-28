@@ -4,19 +4,20 @@ import com.frogger.objects.*;
 
 public class FroggerGame {
 
-    public static int PLAYING = 0;
-    public static boolean DEAD = false;
-    public static boolean WIN = false;
-    public static final int frogX = 320, frogY = 275;
-    public static final int CarLaneInitialY = 75;
+    public int PLAYING = 0;
+    public boolean DEAD = false;
+    public boolean WIN = false;
+    public final int frogX = 320, frogY = 275;
+    public final int CarLaneInitialY = 75;
 
     int status, lives;
     boolean reachedMiddle;
     Frog frog;
     CarLane[] carLanes;
+    FroggerPanel panel;
 
-    public FroggerGame() {
-
+    public FroggerGame(FroggerPanel panel) {
+        this.panel = panel;
         status = PLAYING;
         reachedMiddle = false;
         lives = 3;
@@ -64,6 +65,7 @@ public class FroggerGame {
             frog.setY(frogY);
         }
         else {
+            panel.gameOver();
             DEAD = true;
         }
     }
@@ -76,6 +78,7 @@ public class FroggerGame {
 
     void checkifThePlayerWin() {
         if (this.frog.getY() <= 50){
+            panel.gameOver();
             WIN = true;
         }
     }
