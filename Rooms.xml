@@ -2,11 +2,12 @@
     <room>
         <name>IntroArcade</name>
         <description>Where the player first enters the game</description>
-        <story_text>, you are a huge fan of "old-skool" video games. You walk into your favorite arcade and find an old dusty machine that you've never seen before. It looks just like the other gaming machines, except that it's powered off.
+        <story_text>
+        You are 27 and a huge fan of the arcades and have been since you were a kid. There is something nostalgic about placing your quarter on the console as you wait to play next. Playing as long as you can on one quarter, and entering the initials SAM when you get high score.
 
-        You find the power plug and plug it into a nearby wall socket. The device flickers to life, and strange sounds garble and warp around you. The screen is on but dark with no apparent logos or company brands.
+        You Google arcades in your area, and find only one, Flynn's Arcade.  There have been some crazy stories about this place and the owners, stuff you would only see in the movies.  It was closed for a long time, but now is flourishing.
 
-        A small slot is found below the controllers. You get a weird feeling as you reach into your pocket to pull out your quarter... Do you put your quarter into the slot?</story_text>
+        You park and walk to the front doors. You remember all the games you used to play, the adrenaline rushes through you as you place your hand on the door.  Are you ready?</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Yes</btn1_text>
         <btn2_text>No</btn2_text>
@@ -24,7 +25,8 @@
     <room>
         <name>StartingPoint0.5</name>
         <description>You said no to the game</description>
-        <story_text>As you reach down your pockets to pick up your quarter. Your quarter falls down the slot.
+        <story_text>
+        You don't want to ruin the memories you had, but you decide to go in anyways . . . .
         </story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>You feel strange!</btn1_text>
@@ -43,17 +45,12 @@
     <room>
         <name>StartingPoint0</name>
         <description>Starting point when the player first enters the pixelated world</description>
-        <story_text>Feeling gypped of a quarter, you turn around to walk towards the customer service desk and you can't believe your eyes. All void. You completely spin 360 degrees, look up, then down. Only darkness surrounds you.
+        <story_text>
+        As you enter Flynn's Arcade it all comes back to you.  You feel 7 years old again.  Back to when your dad would take you to play, telling you about the Grid and how to play the games.
 
-        All of a sudden, a light begins to glow several meters ahead. You walk towards the light--your only chance to discover how you got here...
+        You notice that each game is accented with a specific light and for a moment you can do nothing but take in the lights and sounds the prizes,  and then . . . . you play!
 
-        A single ball of light lays on the floor in front of you. You reach out to pick it up, and you notice that your arms are distorted! You look down at your body and legs--you can't believe what you see--you're completely pixelated!
-
-        You grab the light, and it begins to hover around your head. It seems to be providing the light you need to see anything within the darkness.
-
-        You think to yourself: "How do I get out of here?" Your basic surival logic kicks in, and you begin to look around for answers. You're currently standing in the room where you found the mysterious light. Instead of getting lost in the dark, you attempt to try basic movement patterns first.
-
-        Where do you want to go?</story_text>
+        What game do you want to play first?</story_text>
         <visible_buttons>6</visible_buttons>
         <btn1_text>to Frogger</btn1_text>
         <btn2_text>to Snake</btn2_text>
@@ -71,8 +68,9 @@
     <room>
         <name>StartingPoint</name>
         <description>Starting point once the player revisits the area after already being in the game</description>
-        <story_text>You're back where you first found yourself after entering the void.
-        Where do you want to go?</story_text>
+        <story_text>
+        You are in the middle of Flynn's Arcade, where do you want to go?
+        </story_text>
         <visible_buttons>6</visible_buttons>
         <btn1_text>to Frogger</btn1_text>
         <btn2_text>to Snake</btn2_text>
@@ -90,7 +88,7 @@
     <room>
         <name>PurplePath1</name>
         <description>Empty room</description>
-        <story_text>You see a faint glimpse of purple light in the distance.</story_text>
+        <story_text>You follow the purple light as you hear hissing sounds.</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the purple light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
@@ -128,7 +126,7 @@
     <room>
         <name>SnakeTerminalEnd</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>Finish gathering your points from Snake before you even decide to go back to the starting point.</story_text>
+        <story_text>You are probably not that good at driving with a trailer are you?  Don't forget your tickets.</story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>Head back toward your starting point</btn1_text>
         <btn2_text></btn2_text>
@@ -146,7 +144,7 @@
     <room>
         <name>GreenPath1</name>
         <description>Empty room</description>
-        <story_text>You see a faint glimpse of green light in the distance.</story_text>
+        <story_text>You follow the green light as you hear the buzzing of flies.</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the green light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
@@ -184,9 +182,9 @@
     <room>
         <name>FroggerTerminalEnd</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>I would hate to see you cross a real street the way you were dodging vehicles. It looks like the glitch has been fixed.
+        <story_text>I would hate to see you cross a real street the way you were dodging vehicles. Don't forget your tickets.
 
-            What do you want to do now?</story_text>
+        </story_text>
         <visible_buttons>1</visible_buttons>
         <btn1_text>Head back toward your starting point</btn1_text>
         <btn2_text></btn2_text>
@@ -204,7 +202,7 @@
     <room>
         <name>GoldPath1</name>
         <description>Empty room</description>
-        <story_text>You see a faint glimpse of gold light in the distance.</story_text>
+        <story_text>You follow the gold light, and feel the oxygen getting sucked out of the room.</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the gold light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
@@ -242,7 +240,7 @@
     <room>
         <name>SpaceInvaderTerminalEnd</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>see you cross a real stg vehicles. It looks like the glitch has been fixed.
+        <story_text>We know who to call when the aliens attack.
 
             What do you want to do now?</story_text>
         <visible_buttons>1</visible_buttons>
@@ -262,7 +260,7 @@
     <room>
         <name>RedPath1</name>
         <description>Empty room</description>
-        <story_text>You see a faint glimpse of red light, bricks are falling everywhere.</story_text>
+        <story_text>You follow the red light, bricks are falling everywhere.</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the red light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
@@ -298,7 +296,7 @@
     <room>
         <name>BrickBreakerTerminalEnd</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text>see you cross a real stg vehicles. It looks like the glitch has been fixed.
+        <story_text>You were the one that knocked down other kids' block castles aren't you?
 
             What do you want to do now?</story_text>
         <visible_buttons>1</visible_buttons>
@@ -318,7 +316,7 @@
     <room>
         <name>BluePath1</name>
         <description>Empty room</description>
-        <story_text>You see a faint glimpse of blue light in the distance.</story_text>
+        <story_text>You follow the blue light and suddenly feel hungry.</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Keep going toward the blue light</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>
@@ -356,7 +354,7 @@
     <room>
         <name>PacmanTerminalEnd</name>
         <description>MiniGame that gives key upon completion after you earn key</description>
-        <story_text> like the glitch has been fixed.
+        <story_text> Good eating, don't forget your tickets.
 
             What do you want to do now?</story_text>
         <visible_buttons>1</visible_buttons>
@@ -376,7 +374,7 @@
     <room>
         <name>PrizePath1</name>
         <description>Empty room</description>
-        <story_text>Ticket redeemer ahead</story_text>
+        <story_text>Turn in your tickets for prizes!</story_text>
         <visible_buttons>2</visible_buttons>
         <btn1_text>Redeem Tickets</btn1_text>
         <btn2_text>Head back to your starting point</btn2_text>

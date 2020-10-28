@@ -108,7 +108,7 @@ public class GetPrize {
                     if (tickets >= 5) {
                     showPrize.add("Does this work");
                     tickets -= 5;
-                    tickets = Player.setTickets();
+                    //tickets = Player.setTickets();
                     System.out.println(showPrize);
                         System.out.println(tickets);}
                     else {
