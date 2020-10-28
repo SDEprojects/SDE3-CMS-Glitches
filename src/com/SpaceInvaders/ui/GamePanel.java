@@ -31,7 +31,7 @@ public class GamePanel extends JPanel {
     private int lives = 2;
     private ImageIcon backgroundImage;
     private Timer timer;
-    private com.paceInvaders.models.Spaceship spaceship;
+    private com.SpaceInvaders.models.Spaceship spaceship;
     private boolean inGame = true;
 
 
@@ -53,7 +53,7 @@ public class GamePanel extends JPanel {
 
     private void initializeVariables() {
         this.generator = new Random();
-        this.spaceship = new com.paceInvaders.models.Spaceship();
+        this.spaceship = new com.SpaceInvaders.models.Spaceship();
         this.laser = new Laser();
         this.enemyShips = new ArrayList<>();
         this.bomb = new ArrayList<>();
