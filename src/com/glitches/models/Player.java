@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Player {
     //set to private
-    String name;
+    public static String name;
     ArrayList<String> inventory = new ArrayList<>();
     public static int tickets;
 
@@ -12,7 +12,7 @@ public class Player {
     public Player() {}
 
     // ACCESSORS
-    public String getName() {
+    public static String getName() {
         return name;
     }
 

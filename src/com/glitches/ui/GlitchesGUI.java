@@ -3,6 +3,7 @@ package com.glitches.ui;
 import com.SpaceInvaders.app.App;
 import com.brickbreaker.StartBrickBreaker;
 import com.frogger.StartFroggerGame;
+import com.glitches.HighScore.HighScores;
 import com.glitches.Rooms;
 import com.glitches.TicketCounter.GetPrize;
 import com.glitches.models.Player;
@@ -194,6 +195,7 @@ class GlitchesGUI extends JFrame {
         } else if (currentRoom.getName().equals("TicketCounterTerminal")) {
             textArea.setText(currentRoom.getStoryText());
             runTicketCounter();
+            HighScores.HighScore();
             currentRoom = Rooms.getRoom("TicketCounterTerminalEnd");
             runGame();
         } else if (currentRoom.getName().equals("GoldPath2")) {
@@ -204,6 +206,7 @@ class GlitchesGUI extends JFrame {
             } else {
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 textArea.setText(currentRoom.getStoryText());
+                HighScores.deSerialize();
             }
         } else {
             textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets() + " .  Inventory : " + player.getInventory());

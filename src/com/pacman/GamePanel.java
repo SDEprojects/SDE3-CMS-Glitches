@@ -21,7 +21,7 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
     Timer gameTimer;
     boolean running = false;
     int totalFood;
-    int score;
+    public static int score;
 
     public GamePanel() {
         startGame();

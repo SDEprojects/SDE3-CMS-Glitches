@@ -21,7 +21,7 @@ public class SnakePanel extends JPanel implements ActionListener {
     final int x[] = new int[SCREEN_WIDTH / UNIT_SIZE];
     final int y[] = new int[SCREEN_HEIGHT / UNIT_SIZE];
     int bodyParts = 2;
-    int blocksEaten;
+    public static int blocksEaten;
     int blockX;
     int blockY;
     char direction = 'R';

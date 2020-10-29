@@ -17,7 +17,7 @@ import javax.swing.Timer;
 public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
     private boolean play = false;
-    public int score = 0;
+    public static int score = 0;
 
     private int totalBricks = 16;
 
