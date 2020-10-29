@@ -83,7 +83,7 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
             try {
                 if(endGame) {
                     Player.tickets += score;
-                    YouWin youWin = new YouWin(true, 0);
+                    YouWin youWin = new YouWin(true, 0, score);
                     youWin.setBounds(0, 0, WIDTH, HEIGHT);
                     this.getParent().getParent().add(youWin, 0);
                     Thread.sleep(50000);

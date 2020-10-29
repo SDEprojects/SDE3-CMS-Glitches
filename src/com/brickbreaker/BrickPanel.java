@@ -85,15 +85,15 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
         }
         graphics.fillOval(ballPosX, ballPosY, 20, 20);
         //ball color & size change
-        if (score >= 20 && score < 50) {
+        if (score >= 50 && score < 100) {
 
             graphics.setColor(Color.yellow);
             graphics.fillOval(ballPosX, ballPosY, 21, 21);
-        } else if (score >= 50 && score < 75) {
+        } else if (score >= 100 && score < 175) {
             //ball
             graphics.setColor(Color.orange);
             graphics.fillOval(ballPosX, ballPosY, 22, 22);
-        } else if (score >= 75) {
+        } else if (score >= 175) {
             //ball
             graphics.setColor(Color.red);
             graphics.fillOval(ballPosX, ballPosY, 23, 23);
@@ -193,12 +193,13 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!play) {
                 play = true;
+                hault = true;
                 playerX = 310;
                 ballPosX = 290;
                 ballPosY = 350;
                 ballDirX = getRandomNumberForX();
                 ballDirY = getRandomNumberForY();
-                totalBricks = 40;
+                totalBricks = 100;
 
                 mapPlay = new BrickFrame(10, 10);
                 score = 10;
@@ -209,8 +210,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
     public void moveRight() {
         play = true;
-        playerSpd = 30;
-        playerX += playerSpd;
+        playerX += 30;
     }
 
     public void moveLeft() {

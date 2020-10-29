@@ -196,17 +196,15 @@ class GlitchesGUI extends JFrame {
             runTicketCounter();
             currentRoom = Rooms.getRoom("TicketCounterTerminalEnd");
             runGame();
-        } else if (currentRoom.getName().equals("GoldPath2")) {
+        } else if (currentRoom.getName().equals("TicketCounterTerminalEnd")) {
             // checks if player has two Keys in inventory
-            if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
-                currentRoom = Rooms.getRoom("ExitDoorWin");
-                runGame();
-            } else {
+            if(Player.inventory.contains("XBox") && Player.inventory.contains("PS5")) {
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 textArea.setText(currentRoom.getStoryText());
+                runGame();
             }
         } else {
-            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets() + " .  Inventory : " + player.getInventory());
+            textArea.setText(currentRoom.getStoryText() + " Tickets you own: " + Player.tickets + " .  Inventory : " + Player.inventory);
         }
 
         // take the currentRoom's buttons and display

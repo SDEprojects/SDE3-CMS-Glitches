@@ -448,9 +448,10 @@
     <room>
         <name>ExitDoorWin</name>
         <description>Exit door after both keys are acquired</description>
-        <story_text>A large, pixelated golden door appears in front of you. It has two key slots.
+        <story_text>You attained the two most valuable prizes in the arcade. The owner wants you to leave now.
+            A large, pixelated golden door appears in front of you.
 
-            You place both keys into the slots, turn them, and hear a distinct click. You push open the door, and a bright white light blinds you. You rub your eyes, and when you open them, you are staring at the screen of the mysterious machine in the arcade. This time, the screen is now showing Frogger and Snake working as usual. You hear a coin drop below into the coin return panel. You grab the coin and look at it. This is the quarter you used to pay for the game, however one side of the quarter displays a glitched Frogger and the other side displays a glitched Snake. YOU WIN!!</story_text>
+            You push open the door, and a bright white light blinds you. You rub your eyes, and when you open them, you are staring at the screen of the mysterious machine in the arcade. This time, the screen is now showing Frogger and Snake working as usual. You hear a coin drop below into the coin return panel. You grab the coin and look at it. This is the quarter you used to pay for the game, however one side of the quarter displays a glitched Frogger and the other side displays a glitched Snake. YOU WIN!!</story_text>
         <visible_buttons>0</visible_buttons>
         <btn1_text/>
         <btn2_text/>
