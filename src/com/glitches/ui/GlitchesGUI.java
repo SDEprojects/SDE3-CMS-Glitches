@@ -168,7 +168,7 @@ class GlitchesGUI extends JFrame {
             runGame();
         } else if (currentRoom.getName().equals("SnakeTerminal")) {
             textArea.setText(currentRoom.getStoryText());
-            player.addToInventory("Purple Key");
+//            player.addToInventory("Purple Key");
             // method that calls SnakeMiniGame.main() method
             runSnake();
             // change the room to break out of this loop
