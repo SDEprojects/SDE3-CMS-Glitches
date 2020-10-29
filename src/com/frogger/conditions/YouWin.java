@@ -13,15 +13,15 @@ import javax.swing.*;
 public class YouWin extends JPanel implements ActionListener {
     public static PlaceholderTextField usernameTextArea;
     int index;
-    Player player;
+    int score;
 
 
-    public YouWin(boolean showUserInput, int index, Player player) {
-        this.player = player;
+    public YouWin(boolean showUserInput, int index, int score) {
         this.setOpaque(true);
         this.setVisible(true);
         this.setLayout((LayoutManager) null);
         this.index = index;
+        this.score = score;
     }
 
     public void paintComponent(Graphics g) {
@@ -34,7 +34,7 @@ public class YouWin extends JPanel implements ActionListener {
         g2d.setComposite(old);
         g.setColor(Color.green);
         g.setFont(new Font("TimesRoman", Font.ITALIC, 20));
-        g.drawString("Please collect your " + player.getTickets() + " tickets and play another game!.", 50, 100);
+        g.drawString("Please collect your " + score + " tickets and play another game!.", 50, 100);
         addExitButton();
     }
 
