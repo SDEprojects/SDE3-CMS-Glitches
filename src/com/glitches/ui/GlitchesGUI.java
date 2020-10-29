@@ -161,7 +161,7 @@ class GlitchesGUI extends JFrame {
             textArea.setText(player.getName() + currentRoom.getStoryText());
         } else if (currentRoom.getName().equals("FroggerTerminal")) {
             textArea.setText(currentRoom.getStoryText());
-            player.addToInventory("Green Key");
+//            player.addToInventory("Green Key");
             // method that calls StartFroggerGame.main() method
             runFrogger();
             // change the room to break out of this loop
@@ -195,24 +195,22 @@ class GlitchesGUI extends JFrame {
         } else if (currentRoom.getName().equals("TicketCounterTerminal")) {
             textArea.setText(currentRoom.getStoryText());
             runTicketCounter();
-            HighScores.HighScore();
             currentRoom = Rooms.getRoom("TicketCounterTerminalEnd");
             runGame();
-        } else if (currentRoom.getName().equals("GoldPath2")) {
+        } else if (currentRoom.getName().equals("TicketCounterTerminalEnd")) {
             // checks if player has two Keys in inventory
-            if(player.getInventory().contains("Green Key") && player.getInventory().contains("Purple Key")) {
-                currentRoom = Rooms.getRoom("ExitDoorWin");
-                runGame();
-            } else {
+            if(Player.inventory.contains("XBox") && Player.inventory.contains("PS5")) {
                 currentRoom = Rooms.getRoom("ExitDoorWin");
                 textArea.setText(currentRoom.getStoryText());
-                HighScores.deSerialize();
+                runGame();
             }
         } else {
-            textArea.setText(currentRoom.getStoryText() + " Total tickets won: " + player.getTickets() + " .  Inventory : " + player.getInventory());
+            textArea.setText(currentRoom.getStoryText() + " Tickets you own: " + Player.tickets + " .  Prizes you own : " + Player.inventory);
         }
+
         // take the currentRoom's buttons and display
         setVisibleButtons(currentRoom.getVisibleButtons());
+
         // set the text for the each btn with corresponding xml key
         choice1Button.setText(currentRoom.getBtn1Text());
         choice2Button.setText(currentRoom.getBtn2Text());
@@ -223,27 +221,27 @@ class GlitchesGUI extends JFrame {
     }
 
     public void runSnake() {
-      SnakeMiniGame.main(player);
+      SnakeMiniGame.main();
     }
 
     public void runFrogger() {
-        StartFroggerGame.main(player);
+        StartFroggerGame.main();
     }
 
     public void runBrickBreaker() {
-
         StartBrickBreaker.main();
     }
+
     public void runSpaceInvaders() {
-        App.main(player);
+        App.main();
     }
     public void runPacman(){
         Pacman.main();
     }
 
-
     public void runTicketCounter() {
-        GetPrize.main((player)); }
+        GetPrize.main();
+    }
 
 
     public void initButtons() {

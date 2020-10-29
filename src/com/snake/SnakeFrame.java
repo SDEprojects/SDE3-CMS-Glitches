@@ -9,13 +9,13 @@ import java.awt.event.WindowEvent;
 
 public class SnakeFrame extends JFrame {
 
-    public SnakeFrame(Player player) {
+    public SnakeFrame() {
         addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 dispose();
             }
         });
-        SnakePanel panel = new SnakePanel(player);
+        SnakePanel panel = new SnakePanel();
         this.add(panel);
         this.setTitle("Snake*Arcade***");
 //        this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
