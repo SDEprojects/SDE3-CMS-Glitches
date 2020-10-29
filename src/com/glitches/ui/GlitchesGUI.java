@@ -204,7 +204,7 @@ class GlitchesGUI extends JFrame {
                 runGame();
             }
         } else {
-            textArea.setText(currentRoom.getStoryText() + " Tickets you own: " + Player.tickets + " .  Inventory : " + Player.inventory);
+            textArea.setText(currentRoom.getStoryText() + " Tickets you own: " + Player.tickets + " .  Prizes you own : " + Player.inventory);
         }
 
         // take the currentRoom's buttons and display
