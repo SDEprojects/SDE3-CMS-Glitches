@@ -16,7 +16,7 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
     // Properties
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
-    public int score;
+    public static int score;
     BufferedImage car1_Left, car1_Right, car2_Left, car2_Right, limo_Left, limo_Right, semi_Left, semi_Right, frogUp, frogDown,
             frogLeft, frogRight, frogLife;
     public FroggerGame game;

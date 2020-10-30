@@ -12,7 +12,7 @@ public class Player {
     public Player() {}
 
     // ACCESSORS
-    public String getName() {
+    public static String getName() {
         return name;
     }
 

@@ -13,7 +13,7 @@ import java.util.Arrays;
 public class GetPrize extends javax.swing.JFrame{
 
 //    public static int tickets = Player.tickets;
-//    public static ArrayList<String> showPrize = new ArrayList<>();
+    public static ArrayList<String> showPrize = new ArrayList<>();
     public static PrizeHandler prizeHandler = new PrizeHandler();
     public static String prize;
     private static JPanel TextBox1;
