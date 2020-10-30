@@ -10,11 +10,15 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class GetPrize {
+public class GetPrize extends javax.swing.JFrame{
 
 //    public static int tickets = Player.tickets;
-    public static ArrayList<String> showPrize = new ArrayList<>();
+//    public static ArrayList<String> showPrize = new ArrayList<>();
     public static PrizeHandler prizeHandler = new PrizeHandler();
+    public static String prize;
+    private static JPanel TextBox1;
+    private static GetPrizePanel panel;
+    public static boolean purchased = false;
 
     // images
     public static ImageIcon fingertrap = new ImageIcon("src/com/glitches/TicketCounter/prizes/fingerTrap.jpg");
@@ -36,24 +40,23 @@ public class GetPrize {
         frame.setVisible(true);
 
         //making 1 JPanel with BorderLayout for Text
-        JPanel TextBox = new JPanel(new BorderLayout());
-
+        panel = new GetPrizePanel(new BorderLayout());
         //making the JLabel inside of the first JPanel
         JLabel text = new JLabel();
         //using <html> tags allows text to wrap
-        text.setText("<html>You have " + Player.tickets + " remaining.");
+        text.setText("<html>You have " + Player.tickets + " remaining.</html>");
         text.setHorizontalAlignment(SwingConstants.CENTER);
         text.setVerticalAlignment(SwingConstants.CENTER);
         text.setFont(new Font("TimesRoman", Font.BOLD, 20));
         //adding JLabel to JPanel
-        TextBox.add(text);
+        panel.add(text);
 
-        JPanel TextBox1 = new JPanel(new BorderLayout());
-
+        // making 2nd panel with prizes bought
+        TextBox1 = new JPanel(new BorderLayout());
         //making the JLabel inside of the first JPanel
         JLabel list = new JLabel();
         //using <html> tags allows text to wrap
-        list.setText("<html>Prizes selected: " + showPrize + ".</html>");
+        list.setText("<html>Prizes selected: " + Player.inventory + ".</html>");
         list.setHorizontalAlignment(SwingConstants.CENTER);
         list.setVerticalAlignment(SwingConstants.CENTER);
         list.setFont(new Font("TimesRoman", Font.BOLD, 20));
@@ -90,6 +93,7 @@ public class GetPrize {
         p9.addActionListener(prizeHandler);
         p9.setActionCommand("p9");
 
+        // prizes buttons panel
         //3 rows, 3 columns, horizontal gap, vertical gap
         JPanel TicketPanel = new JPanel(new GridLayout(3, 3, 20, 10));
 
@@ -108,11 +112,23 @@ public class GetPrize {
 //        frame.setSize(1000, 975);
 //        frame.setBackground(Color.BLACK);
 //        frame.setVisible(true);
-        frame.getContentPane().add(TextBox, BorderLayout.NORTH);
+//        frame.getContentPane().add(panel, BorderLayout.NORTH);
         frame.getContentPane().add(TicketPanel, BorderLayout.CENTER);
-        frame.getContentPane().add(TextBox1, BorderLayout.SOUTH);
+//        frame.getContentPane().add(TextBox1, BorderLayout.SOUTH);
 
 
+    }
+
+    public static void popUp() {
+        GetPrizeFrame frame = new GetPrizeFrame();
+        frame.setSize(500, 100);
+        Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+        frame.setLocation((int)(screenSize.getWidth()/2 - frame.getSize().getWidth()/2),
+                (int)(screenSize.getHeight()/2 - frame.getSize().getHeight()/2));
+        frame.setResizable(false);
+        frame.setTitle(prize);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     public static class PrizeHandler implements ActionListener{
@@ -122,105 +138,123 @@ public class GetPrize {
             switch (e.getActionCommand()) {
                 case "p1":
                     if (Player.tickets >= 5) {
-                        showPrize.add("Finger Trap");
                         Player.tickets -= 5;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("Finger Trap");
-//                        runClerk();
+                        prize = "Finger Trap";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p2":
                     if (Player.tickets >= 10) {
-                        showPrize.add("Sticky Hand");
                         Player.tickets -= 10;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("Sticky Hand");
+                        prize = "Sticky Hand";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p3":
                     if (Player.tickets >= 15) {
-                        showPrize.add("Recorder");
                         Player.tickets -= 15;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("Recorder");
+                        prize = "Recorder";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p4":
                     if (Player.tickets >= 20) {
-                        showPrize.add("Bounce ball");
                         Player.tickets -= 20;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("Bounce ball");
+                        prize = "Bounce ball";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p5":
                     if (Player.tickets >= 25) {
-                        showPrize.add("Pokemon cards");
                         Player.tickets -= 25;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("Pokemon cards");
+                        prize = "Pokemon cards";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p6":
                     if (Player.tickets >= 75) {
-                        showPrize.add("Drone");
                         Player.tickets -= 75;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("Drone");
+                        prize = "Drone";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p7":
                     if (Player.tickets >= 100) {
-                        showPrize.add("GoPro");
                         Player.tickets -= 100;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("GoPro");
+                        prize = "GoPro";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p8":
                     if (Player.tickets >= 200) {
-                        showPrize.add("PS5");
                         Player.tickets -= 200;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
                         Player.inventory.add("PS5");
+                        prize = "PS5";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
                 case "p9":
                     if (Player.tickets >= 200) {
-                        showPrize.add("XBox");
                         Player.tickets -= 200;
-                        System.out.println(showPrize);
                         System.out.println(Player.tickets);
-                        Player.inventory.add("Xbox");
+                        Player.inventory.add("XBox");
+                        prize = "XBox";
+                        purchased = true;
+//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
+                        purchased = false;
                     }
                     break;
             }
+            popUp();
         }
     }
 }

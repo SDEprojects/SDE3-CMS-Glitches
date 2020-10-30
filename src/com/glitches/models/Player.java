@@ -30,7 +30,7 @@ public class Player {
 
     public void addToInventory(String key) { this.inventory.add(key); }
 
-    public int getTickets() {
+    public static int getTickets() {
         return tickets;
     }
 
