@@ -10,18 +10,11 @@ import java.awt.event.WindowEvent;
 public class GetPrizeFrame extends JFrame{
 
     public GetPrizeFrame(){
-        addWindowListener(new WindowAdapter() {
-            public void windowClosing(WindowEvent e) {
-                dispose();
-            }
-        });
-        GetPrizePanel panel = new GetPrizePanel();
-//        this.add(panel);
-        // making a new JFrame
-        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-//        this.setSize(1000, 975);
-        this.setSize(500, 505);
-        this.setBackground(Color.BLACK);
-        this.setVisible(true);
+        GetPrizePanel panel = new GetPrizePanel(new BorderLayout());
+        panel.setLocation(0,0);
+        panel.setSize(this.getSize());
+        panel.setBackground(Color.BLACK);
+        panel.setVisible(true);
+        this.add(panel);
     }
 }
