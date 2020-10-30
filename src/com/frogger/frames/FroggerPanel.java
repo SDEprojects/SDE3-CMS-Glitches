@@ -13,22 +13,19 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 
 public class FroggerPanel extends JPanel implements ActionListener, Runnable {
-
+    // Properties
     public static int HEIGHT = 450;
     public static int WIDTH = 700;
     public static int score;
-    Player player;
-    private final CollisionDetector checkForCollision;
-
     BufferedImage car1_Left, car1_Right, car2_Left, car2_Right, limo_Left, limo_Right, semi_Left, semi_Right, frogUp, frogDown,
             frogLeft, frogRight, frogLife;
-    FroggerGame game;
+    public FroggerGame game;
+    public boolean endGame = false;
 
-    public FroggerPanel(Player player) {
-        this.player = player;
+    public FroggerPanel() {
         this.addKeyListener(new MyKeyAdapter());
         setSize(WIDTH, HEIGHT);
-        this.checkForCollision = new CollisionDetector();
+        CollisionDetector checkForCollision = new CollisionDetector();
 
         reset();
         Thread pThread;
@@ -73,25 +70,29 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
     public void keyPressed(KeyEvent e) {
     }
 
+
+    public void gameOver(){
+        endGame = true;
+    }
+
     @Override
     public void run() {
-        while (FroggerGame.PLAYING == 0) {
+        while (game.PLAYING == 0) {
             update();
             repaint();
             try {
-                if ((FroggerGame.WIN) || (FroggerGame.DEAD)) {
-                    player.setTickets(score);
-                    YouWin youWin = new YouWin(true, 0, player); //
+                if(endGame) {
+                    Player.tickets += score;
+                    YouWin youWin = new YouWin(true, 0, score);
                     youWin.setBounds(0, 0, WIDTH, HEIGHT);
                     this.getParent().getParent().add(youWin, 0);
                     Thread.sleep(50000);
-                    FroggerGame.PLAYING = 1;
+                    game.PLAYING = 1;
                     break;
                 }
                 Thread.sleep(35);
             } catch (Exception e) {
-                System.out.println("I can't fix this bug!");
-                System.out.println(e.getMessage());
+                System.out.println(e);
                 break;
             }
         }
@@ -206,7 +207,7 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
     }
 
     void update() {
-        game.update();
+        this.game.update();
     }
 
     public void addNotify() {
@@ -215,7 +216,7 @@ public class FroggerPanel extends JPanel implements ActionListener, Runnable {
     }
 
     void reset() {
-        this.game = new FroggerGame();
+        this.game = new FroggerGame(this);
     }
 
 

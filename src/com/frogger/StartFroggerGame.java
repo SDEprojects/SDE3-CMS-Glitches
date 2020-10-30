@@ -5,7 +5,7 @@ import com.glitches.models.Player;
 
 public class StartFroggerGame {
 
-    public static void main(Player player) {
-        FroggerFrame frame = new FroggerFrame(player); // Starts the game.
+    public static void main() {
+         new FroggerFrame(); // Starts the game.
     }
 }

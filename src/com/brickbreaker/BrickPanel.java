@@ -19,13 +19,13 @@ import javax.swing.Timer;
 public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
     private boolean play = false;
-    public int score = 0;
-    public int tickets = 0;
+    public static int score = 0;
+
     private int totalBricks = 16;
 
     private Timer timer;
     private int delay = 10;
-
+    private boolean hault = true;
     private int playerX = 300;
 
     private int ballPosX = 290;
@@ -37,7 +37,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
     private BrickFrame mapPlay;
 
     public BrickPanel() {
-        mapPlay = new BrickFrame(4, 10);
+        mapPlay = new BrickFrame(10, 10);
 
         addKeyListener(this);
         setFocusable(true);
@@ -48,7 +48,6 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
     @Override
     public void paint(Graphics graphics) {
-
         //background
         graphics.setColor(Color.black);
         graphics.fillRect(1, 1, 690, 590);
@@ -85,15 +84,15 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
         }
         graphics.fillOval(ballPosX, ballPosY, 20, 20);
         //ball color & size change
-        if (score >= 20 && score < 50) {
+        if (score >= 50 && score < 100) {
 
             graphics.setColor(Color.yellow);
             graphics.fillOval(ballPosX, ballPosY, 21, 21);
-        } else if (score >= 50 && score < 75) {
+        } else if (score >= 100 && score < 175) {
             //ball
             graphics.setColor(Color.orange);
             graphics.fillOval(ballPosX, ballPosY, 22, 22);
-        } else if (score >= 75) {
+        } else if (score >= 175) {
             //ball
             graphics.setColor(Color.red);
             graphics.fillOval(ballPosX, ballPosY, 23, 23);
@@ -110,11 +109,11 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
             graphics.setColor(Color.RED);
             graphics.setFont(new Font("serif", Font.BOLD, 20));
-            graphics.drawString("You Win! You received: " + score +" tickets", 200,300);
+            graphics.drawString("You Win! Score: " + score, 200,300);
 
-//            graphics.setColor(Color.YELLOW);
-//            graphics.setFont(new Font("serif", Font.BOLD, 20));
-//            graphics.drawString("Press Enter to Restart..", 230, 230);
+            graphics.setColor(Color.YELLOW);
+            graphics.setFont(new Font("serif", Font.BOLD, 20));
+            graphics.drawString("Press Enter to Restart..", 230, 230);
 
             //above score hiding
             graphics.setColor(Color.black);
@@ -128,47 +127,51 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
             graphics.setColor(Color.black);
             graphics.fillRect(playerX, 550, 100, 8);
 
-            //start message
-//            graphics.setColor(Color.BLACK);
-//            graphics.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 25));
-//            graphics.drawString("Press Enter/Left/Right Arrow to start the game!", 90, 350);
+            if(!play){
+                endGame();
+            }
         }
-        if (ballPosY > 570) { //ball fall down
+        if (ballPosY > 570) { //ball fell below floor
             play = false;
             ballDirX = 0;
             ballDirY = 0;
-
+            endGame();
             //hiding after game over
             graphics.setColor(Color.black);
             graphics.fillOval(ballPosX, ballPosY, 23, 23);
 
             graphics.setColor(Color.RED);
             graphics.setFont(new Font("serif", Font.BOLD, 30));
-            graphics.drawString("Game Over! You received "+ score + " tickets" , 200, 300);
+            graphics.drawString("Game Over! Score: "+ score , 200, 300);
 
             //above score hiding
             graphics.setColor(Color.black);
             graphics.setFont(new Font("serif", Font.BOLD, 22));
             graphics.drawString("Score: " + score, 490,30);
 
-            //hide remains bricks
+            //hide remaining bricks
             mapPlay.draw((Graphics2D) graphics, Color.BLACK);
 
             //paddle
             graphics.setColor(Color.black);
             graphics.fillRect(playerX, 550, 100, 8);
 
-            //game start message
-//            graphics.setColor(Color.YELLOW);
-//            graphics.setFont(new Font("serif", Font.PLAIN, 25));
-//            graphics.drawString("Press Enter/LEFT/RIGHT arrow to start game!", 90, 350);
-
+            if(!play){
+                endGame();
+            }
         }
-        //TICKETS;
-        tickets += score;
-        graphics.dispose();
 
+        graphics.dispose();
     }
+    public void endGame(){
+        if(hault) {
+            Player.tickets += score;
+            System.out.println("hault");
+        }
+        hault = false;
+    }
+
+
 
     @Override
     public void keyPressed(KeyEvent e) {
@@ -189,14 +192,15 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!play) {
                 play = true;
+                hault = true;
                 playerX = 310;
                 ballPosX = 290;
                 ballPosY = 350;
                 ballDirX = getRandomNumberForX();
                 ballDirY = getRandomNumberForY();
-                totalBricks = 16;
+                totalBricks = 100;
 
-                mapPlay = new BrickFrame(4, 10);
+                mapPlay = new BrickFrame(10, 10);
                 score = 10;
                 repaint();
             }
@@ -205,12 +209,12 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
 
     public void moveRight() {
         play = true;
-        playerX += 20;
+        playerX += 30;
     }
 
     public void moveLeft() {
         play = true;
-        playerX -= 20;
+        playerX -= 30;
     }
 
     @Override

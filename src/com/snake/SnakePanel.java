@@ -21,20 +21,19 @@ public class SnakePanel extends JPanel implements ActionListener {
     final int x[] = new int[SCREEN_WIDTH / UNIT_SIZE];
     final int y[] = new int[SCREEN_HEIGHT / UNIT_SIZE];
     int bodyParts = 2;
-    int blocksEaten;
+    public static int blocksEaten;
     int blockX;
     int blockY;
     char direction = 'R';
     boolean running = false;
     Timer timer;
     // IS this player the same object from GlitchesGUI ???
-    Player player;
+//    Player player;
     Random random;
     private JButton restartButton;
 
     // Ctor
-    SnakePanel(Player player) {
-        this.player = player;
+    SnakePanel() {
         random = new Random();
         this.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
         this.setBackground(Color.black);
@@ -44,22 +43,6 @@ public class SnakePanel extends JPanel implements ActionListener {
     }
 
     // Methods
-//    private void addRestartButton() { // New game button. Will close out old game.
-//        String buttonText = "New Game slappy mcgoooo";
-//        restartButton = new JButton(buttonText);
-//        Font font = new Font("TimesRoman", Font.ITALIC, 40);
-//        restartButton.setFont(font);
-//        setLayout(null);
-//        restartButton.setBounds(100, 600, 600, 50);
-//        add(restartButton);
-//        restartButton.addActionListener(new ActionListener() {
-//            public void actionPerformed(ActionEvent e) {
-//
-//                // getTopLevelAncestor - then - setVisible(false)
-//                System.out.println("Slappy");
-//            }
-//        });
-//    }
 
     public void startGame() {
         newBlock();
@@ -100,7 +83,7 @@ public class SnakePanel extends JPanel implements ActionListener {
         if (blocksEaten < 10) {
             // give tickets to player
             int winnings = blocksEaten;
-            player.setTickets(winnings);
+            Player.tickets += winnings;
 
             // set the screen
             g.setColor(Color.green);
@@ -109,7 +92,7 @@ public class SnakePanel extends JPanel implements ActionListener {
 //            addRestartButton();
             System.out.println("tickets won: " + winnings);
         } else if (blocksEaten == 10) {
-            player.setTickets(blocksEaten);
+            Player.tickets += blocksEaten;
             g.setColor(Color.green);
             g.setFont(new Font("TimesRoman", Font.ITALIC, 30));
             g.drawString("You ate 10! Tickets rewarded:" + blocksEaten, 10, 100);
