@@ -41,7 +41,7 @@ public class GetPrize {
         //making the JLabel inside of the first JPanel
         JLabel text = new JLabel();
         //using <html> tags allows text to wrap
-        text.setText("<html>You have " + Player.tickets + " remaining.");
+        text.setText("<html>Remaining Tickets:  " + Player.tickets);
         text.setHorizontalAlignment(SwingConstants.CENTER);
         text.setVerticalAlignment(SwingConstants.CENTER);
         text.setFont(new Font("TimesRoman", Font.BOLD, 20));
@@ -53,7 +53,7 @@ public class GetPrize {
         //making the JLabel inside of the first JPanel
         JLabel list = new JLabel();
         //using <html> tags allows text to wrap
-        list.setText("<html>Prizes selected: " + showPrize + ".</html>");
+        list.setText("<html> Prizes selected: " + showPrize);
         list.setHorizontalAlignment(SwingConstants.CENTER);
         list.setVerticalAlignment(SwingConstants.CENTER);
         list.setFont(new Font("TimesRoman", Font.BOLD, 20));

@@ -7,8 +7,6 @@ import com.glitches.models.Player;
 import com.snake.SnakePanel;
 
 import java.io.*;
-import java.security.PublicKey;
-import java.util.HashMap;
 
 public class HighScores implements java.io.Serializable {
 
@@ -19,39 +17,19 @@ public class HighScores implements java.io.Serializable {
     public static int pacScore;
     public static int snakeScore;
     public static int totalScore;
-    public static HashMap<String, Integer> totalhighscore;
 
     public static void main(String[] args) {
         HighScore();
     }
+
     public static void HighScore() {
-        test();
         getScores();
-        totalScore();
-        score(name , totalScore, brickScore, froggerScore, pacScore, snakeScore, spaceScore);
+        serialize(name, totalScore, brickScore, froggerScore, pacScore, snakeScore, spaceScore);
         deSerialize();
+
     }
 
-    private static void test() {
-        name = "jon";
-        totalScore = 150;
-        froggerScore = 10;
-        brickScore = 20;
-        pacScore = 30;
-        snakeScore = 40;
-        spaceScore = 50;
-
-        System.out.println(name);
-        System.out.println(totalScore);
-        System.out.println(froggerScore);
-        System.out.println(brickScore);
-        System.out.println(pacScore);
-        System.out.println(spaceScore);
-        System.out.println(snakeScore);
-    }
-
-    public static void score(String name, int totalScore, int brickScore, int froggerScore, int pacScore, int snakeScore, int spaceScore) {
-
+    public static void serialize(String name, int totalScore, int brickScore, int froggerScore, int pacScore, int snakeScore, int spaceScore) {
 
         HighScores hs = new HighScores();
         hs.name = name;
@@ -68,8 +46,7 @@ public class HighScores implements java.io.Serializable {
             out.writeObject(hs);
             out.close();
             System.out.println("file saved");
-        }
-        catch (IOException i) {
+        } catch (IOException i) {
             i.printStackTrace();
         }
 
@@ -83,36 +60,25 @@ public class HighScores implements java.io.Serializable {
             hs = (HighScores) in.readObject();
             in.close();
             fileIn.close();
-        }
-        catch (IOException i) {
-            i.printStackTrace();
+            System.out.println("deserialized");
             return;
-        }
-        catch (ClassNotFoundException c) {
+
+        } catch (IOException i) {
+            i.printStackTrace();
+        } catch (ClassNotFoundException c) {
             System.out.println("Class not found");
             c.printStackTrace();
-            return;
         }
-
-        System.out.println("name: " + hs.name);
-        System.out.println("toats: " + hs.totalScore);
-        System.out.println("brick: " + hs.brickScore);
-        System.out.println("frog: " + hs.froggerScore);
-        System.out.println("pac: " + hs.pacScore);
-        System.out.println("snake: " + hs.snakeScore);
-        System.out.println("space: " + hs.spaceScore);
-
     }
 
 
-
-
-
-
-
+    //have input for player to save their scores to their own file
+    //have a key/value pair to continue saving additional scores
+    //deserialize at beginning of game to show previous high scores
 
     private static void getScores() {
         getName();
+        getTotalScore();
         getBrickScore();
         getFroggerScore();
         getPacScore();
@@ -120,19 +86,12 @@ public class HighScores implements java.io.Serializable {
         getSpaceScore();
     }
 
-    private static void totalScore() {
-        totalScore = froggerScore +brickScore + pacScore + spaceScore + snakeScore;
-
-    }
-
-
-
-
-
-
-
-
     //Getters
+
+    public static int getTotalScore() {
+        totalScore = getFroggerScore() +getBrickScore() + getPacScore() + getSpaceScore() + getSnakeScore();
+        return totalScore;
+    }
 
     public static String getName() {
         name = Player.getName();
