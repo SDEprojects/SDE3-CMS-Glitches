@@ -12,8 +12,6 @@ import java.util.Arrays;
 
 public class GetPrize extends javax.swing.JFrame{
 
-//    public static int tickets = Player.tickets;
-    public static ArrayList<String> showPrize = new ArrayList<>();
     public static PrizeHandler prizeHandler = new PrizeHandler();
     public static String prize;
     private static JPanel TextBox1;
@@ -108,10 +106,7 @@ public class GetPrize extends javax.swing.JFrame{
         TicketPanel.add(p8);
         TicketPanel.add(p9);
 
-//        frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-//        frame.setSize(1000, 975);
-//        frame.setBackground(Color.BLACK);
-//        frame.setVisible(true);
+        // Don't include the North and South panels anymore
 //        frame.getContentPane().add(panel, BorderLayout.NORTH);
         frame.getContentPane().add(TicketPanel, BorderLayout.CENTER);
 //        frame.getContentPane().add(TextBox1, BorderLayout.SOUTH);
@@ -132,7 +127,6 @@ public class GetPrize extends javax.swing.JFrame{
     }
 
     public static class PrizeHandler implements ActionListener{
-
         @Override
         public void actionPerformed(ActionEvent e) {
             switch (e.getActionCommand()) {
@@ -143,7 +137,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("Finger Trap");
                         prize = "Finger Trap";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -156,7 +149,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("Sticky Hand");
                         prize = "Sticky Hand";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -169,7 +161,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("Recorder");
                         prize = "Recorder";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -182,7 +173,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("Bounce ball");
                         prize = "Bounce ball";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -195,7 +185,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("Pokemon cards");
                         prize = "Pokemon cards";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -208,7 +197,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("Drone");
                         prize = "Drone";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -221,7 +209,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("GoPro");
                         prize = "GoPro";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -234,7 +221,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("PS5");
                         prize = "PS5";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;
@@ -247,7 +233,6 @@ public class GetPrize extends javax.swing.JFrame{
                         Player.inventory.add("XBox");
                         prize = "XBox";
                         purchased = true;
-//                        popUp();
                     } else {
                         System.out.println("not enough tickets");
                         purchased = false;

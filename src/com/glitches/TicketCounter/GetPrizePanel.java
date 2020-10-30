@@ -15,6 +15,7 @@ public class GetPrizePanel extends javax.swing.JPanel implements ActionListener 
 
     public GetPrizePanel(BorderLayout borderLayout){
         JLabel text = new JLabel();
+        // if player has enough tix or not, tell them
         if(GetPrize.purchased){
             text.setText("<html>You purchased a " + GetPrize.prize +".\n You have " + Player.tickets + " remaining.</html>");
         } else {
