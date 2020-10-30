@@ -251,8 +251,8 @@
         <btn5_text></btn5_text>
         <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
-        <c2/>
-        <c3/>
+        <c2></c2>
+        <c3></c3>
         <c4></c4>
         <c5></c5>
         <c6></c6>
@@ -307,8 +307,8 @@
         <btn5_text></btn5_text>
         <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
-        <c2/>
-        <c3/>
+        <c2></c2>
+        <c3></c3>
         <c4></c4>
         <c5></c5>
         <c6></c6>
@@ -365,8 +365,8 @@
         <btn5_text></btn5_text>
         <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
-        <c2/>
-        <c3/>
+        <c2></c2>
+        <c3></c3>
         <c4></c4>
         <c5></c5>
         <c6></c6>
@@ -411,13 +411,13 @@
         <name>TicketCounterTerminalEnd</name>
         <description>Redeem tickets and exit game</description>
         <story_text>Come back and win more prizes when you have time!</story_text>
-        <visible_buttons></visible_buttons>
+        <visible_buttons>1</visible_buttons>
         <btn1_text>Back to Arcade</btn1_text>
         <btn2_text></btn2_text>
         <btn3_text></btn3_text>
         <btn4_text></btn4_text>
         <btn5_text></btn5_text>
-        <btn6></btn6>
+        <btn6_text></btn6_text>
         <c1>StartingPoint</c1>
         <c2></c2>
         <c3></c3>

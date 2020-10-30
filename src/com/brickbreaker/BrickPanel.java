@@ -112,9 +112,9 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
             graphics.setFont(new Font("serif", Font.BOLD, 20));
             graphics.drawString("You Win! You received: " + score +" tickets", 200,300);
 
-            graphics.setColor(Color.YELLOW);
-            graphics.setFont(new Font("serif", Font.BOLD, 20));
-            graphics.drawString("Press Enter to Restart..", 230, 230);
+//            graphics.setColor(Color.YELLOW);
+//            graphics.setFont(new Font("serif", Font.BOLD, 20));
+//            graphics.drawString("Press Enter to Restart..", 230, 230);
 
             //above score hiding
             graphics.setColor(Color.black);
@@ -194,7 +194,7 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
                 ballPosY = 350;
                 ballDirX = getRandomNumberForX();
                 ballDirY = getRandomNumberForY();
-                totalBricks = 40;
+                totalBricks = 16;
 
                 mapPlay = new BrickFrame(4, 10);
                 score = 10;
