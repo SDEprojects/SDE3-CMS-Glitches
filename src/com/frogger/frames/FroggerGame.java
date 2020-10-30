@@ -4,23 +4,24 @@ import com.frogger.objects.*;
 
 public class FroggerGame {
 
-    public static final int PLAYING = 0;
-    public static boolean DEAD = false;
-    public static boolean WIN = false;
-    public static final int frogX = 320, frogY = 275;
-    public static final int CarLaneInitialY = 75;
+    public int PLAYING = 0;
+    public boolean DEAD = false;
+    public boolean WIN = false;
+    public final int frogX = 320, frogY = 275;
+    public final int CarLaneInitialY = 75;
 
     int status, lives;
     boolean reachedMiddle;
-    Frog player;
+    Frog frog;
     CarLane[] carLanes;
+    FroggerPanel panel;
 
-    public FroggerGame() {
-
-        status = FroggerGame.PLAYING;
+    public FroggerGame(FroggerPanel panel) {
+        this.panel = panel;
+        status = PLAYING;
         reachedMiddle = false;
         lives = 3;
-        player = new Frog(frogX, frogY);
+        frog = new Frog(frogX, frogY);
         carLanes = new CarLane[5];
 
         for (int i = 0; i < carLanes.length; i++) {
@@ -35,8 +36,7 @@ public class FroggerGame {
     }
 
     public void update() {
-        for (int u = 0; u < carLanes.length; u++)
-            carLanes[u].update();
+        for (CarLane carLane : carLanes) carLane.update();
         for (int y = 0; y < carLanes.length; y++)
             runChecks();
     }
@@ -49,8 +49,8 @@ public class FroggerGame {
         return lives;
     }
 
-    public Frog getPlayer() {
-        return player;
+    public Frog getFrog() {
+        return frog;
     }
 
     public CarLane[] getCarLanes() {
@@ -61,23 +61,24 @@ public class FroggerGame {
     void playerDeath() {
         lives--;
         if (lives > 0) {
-            player.setX(frogX);
-            player.setY(frogY);
+            frog.setX(frogX);
+            frog.setY(frogY);
         }
         else {
+            panel.gameOver();
             DEAD = true;
         }
     }
 
     void carCheck() {
-        //todo kills player when contacting car{
-        if (CollisionDetector.CollisionDetector(this.getPlayer(), this.getCarLanes())) {
+        if (CollisionDetector.CollisionDetector(this.getFrog(), this.getCarLanes())) {
             playerDeath();
         }
     }
 
     void checkifThePlayerWin() {
-        if (this.player.getY() <= 75){
+        if (this.frog.getY() <= 50){
+            panel.gameOver();
             WIN = true;
         }
     }

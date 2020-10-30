@@ -3,19 +3,21 @@ package com.glitches.models;
 import java.util.ArrayList;
 
 public class Player {
-    String name;
-    ArrayList<String> inventory = new ArrayList<>();
+    //set to private
+    public static String name;
+    public static ArrayList<String> inventory = new ArrayList<>();
+    public static int tickets = 0;
 
     // CTOR
     public Player() {}
 
     // ACCESSORS
-    public String getName() {
+    public static String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        Player.name = name;
     }
 
     public ArrayList<String> getInventory() {
@@ -23,8 +25,16 @@ public class Player {
     }
 
     public void setInventory(ArrayList<String> inventory) {
-        this.inventory = inventory;
+
     }
 
     public void addToInventory(String key) { this.inventory.add(key); }
+
+    public static int getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(int tickets) {
+       Player.tickets += tickets;
+    }
 }

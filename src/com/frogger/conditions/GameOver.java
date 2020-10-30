@@ -1,6 +1,7 @@
 package com.frogger.conditions;
 
 import com.frogger.frames.FroggerFrame;
+import com.frogger.frames.FroggerPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +13,7 @@ public class GameOver extends JPanel {
     public GameOver(int index) {
         this.setOpaque(false);
         this.setVisible(true);
-        this.setLayout((LayoutManager) null);
+        this.setLayout(null);
         this.index = index;
     }
 
@@ -30,16 +31,21 @@ public class GameOver extends JPanel {
     }
 
     public void addRestartButton() { // New game button. Will close out old game.
-        String buttonText = "New Game";
+        String buttonText = "Back to Arcade";
         JButton restartButton = new JButton(buttonText);
         Font font = new Font("TimesRoman", Font.ITALIC, 15);
         restartButton.setFont(font);
         setLayout(null);
         restartButton.setBounds(270, 200, 150, 100);
-        add(restartButton);
+        add(restartButton); //this adds the button to the frame
         restartButton.addActionListener(e -> {
-            Arrays.asList(Window.getWindows()).forEach(Window::dispose);
-            new FroggerFrame();
+            //Arrays.asList(Window.getWindows()).forEach(Window::dispose);
+            getTopLevelAncestor().setVisible(false);
+
+            //new FroggerFrame();
         });
+        System.out.println("should start new game");
+//        new FroggerFrame();
+
     }
 }
