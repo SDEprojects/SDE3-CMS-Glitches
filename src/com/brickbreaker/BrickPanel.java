@@ -27,7 +27,6 @@ public class BrickPanel extends JPanel implements KeyListener, ActionListener {
     private int delay = 10;
     private boolean hault = true;
     private int playerX = 300;
-    private int playerSpd = 0;
 
     private int ballPosX = 290;
     private int ballPosY = 350;
