@@ -13,9 +13,9 @@ public class Constants {
 
     // size of the board, not the frame
     public static final int BOARD_WIDTH = 900;
-    public static final int BOARD_HEIGHT = 750;
+    public static final int BOARD_HEIGHT = 650;
 
-    public static final int BOMB_HEIGHT = 6;
+    public static final int BOMB_HEIGHT = 12;
 
     // UFO constants
     public static final int ENEMY_SHIP_HEIGHT = 24;
@@ -36,11 +36,11 @@ public class Constants {
     public static final int GAME_SPEED = 10;
 
     // Spaceship width and height
-    public static final int SPACESHIP_WIDTH = 34;
-    public static final int SPACESHIP_HEIGHT = 28;
+    public static final int SPACESHIP_WIDTH = 40;
+    public static final int SPACESHIP_HEIGHT = 35;
 
     //speed of laser
-    public static final int LASER_SPEED = 4;
+    public static final int LASER_SPEED = 7;
 
     // image locations
     public static final String BACKGROUND_IMAGE_URL = "src/com/SpaceInvaders/sprites/background.jpg";

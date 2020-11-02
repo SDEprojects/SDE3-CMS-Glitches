@@ -23,6 +23,7 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
     int totalFood;
     public static int score;
     int hault = 0;
+    int spawn = 0;
 
     public GamePanel() {
         startGame();
@@ -38,7 +39,7 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
             public void run() {
                 hero.set();
                 for(Ghost ghost: ghosts) {
-                    ghost.set();
+                    ghost.set(hero);
                 }
                 checkAllFoodEaten();
                 repaint();
@@ -170,14 +171,31 @@ public class GamePanel extends javax.swing.JPanel implements ActionListener {
             score = totalFood - foods.size();
             Player.tickets += score;
             g.setFont(new Font("TimesRoman", Font.ITALIC, 40));
-            g.drawString("You lose. Tickets rewarded: " + score, 20, 150);
+            if(score == 139) {
+                g.drawString("You win! Tickets rewarded: " + score, 20, 150);
+            } else {
+                g.drawString("You lose. Tickets rewarded: " + score, 20, 150);
+            }
     }
 
     public void keyPressed(KeyEvent e) {
-        if(e.getKeyCode()==KeyEvent.VK_LEFT) hero.keyLeft = true;
+        if(e.getKeyCode()==KeyEvent.VK_LEFT) {
+            hero.keyLeft = true;
+            if(spawn % 5 == 0) {
+                ghosts.add(new Ghost(325, 230, this));
+            }
+            spawn++;
+        }
         if(e.getKeyCode()==KeyEvent.VK_UP) hero.keyUp = true;
         if(e.getKeyCode()==KeyEvent.VK_DOWN) hero.keyDown = true;
-        if(e.getKeyCode()==KeyEvent.VK_RIGHT) hero.keyRight = true;
+        if(e.getKeyCode()==KeyEvent.VK_RIGHT) {
+            hero.keyRight = true;
+//            if(spawn % 3 == 0) {
+//                ghosts.add(new Ghost(285, 300, this));
+//                spawn++;
+//            }
+//            spawn++;
+        }
     }
 
     public void keyReleased(KeyEvent e) {
