@@ -12,6 +12,8 @@ public class Ghost {
     int y;
     int width;
     int height;
+    boolean triedUp;
+    boolean triedLeft;
 
     double xspeed;
     double yspeed;
@@ -35,22 +37,68 @@ public class Ghost {
         gtd.fillRect(x, y, width, height);
     }
 
-    public void set() {
+    // decide which way to go at a dead end
+    public void set(Hero hero) {
         Random random = new Random();
-        int direction = random.nextInt(4);
+        // pick a random decision
+        int direction = random.nextInt(8);
         if(yspeed == 0 && xspeed == 0) {
+
+//            // if UP and Left
+//            if(triedUp && triedLeft) {
+//                xspeed = 3;
+//                triedLeft = false;
+//            }
+//            if(triedUp && triedLeft){
+//                yspeed = 3;
+//                triedUp = false;
+//            }
+//
+//            // if UP and RIGHT
+//            if(triedUp && !triedLeft){
+//                xspeed = -3;
+//                triedLeft = true;
+//            }
+//            if(triedUp && !triedLeft){
+//                yspeed = 3;
+//                triedUp = false;
+//            }
+//
+//            // if DOWN and LEFT
+//            if(!triedUp && triedLeft){
+//                xspeed = 3;
+//                triedLeft = false;
+//            }
+//            if(!triedUp && triedLeft){
+//                yspeed = -3;
+//                triedUp = true;
+//            }
+//
+//            // if DOWN and RIGHT
+//            if(!triedUp && !triedLeft){
+//                xspeed = -3;
+//                triedLeft = true;
+//            }
+//            if(!triedUp && !triedLeft){
+//                yspeed = -3;
+//                triedUp = true;
+//            }
             switch (direction) {
+                case 0:
+                case 5:
+                    xspeed = 3;
+                    break;
                 case 1:
-                    yspeed = -3;
+                case 6:
+                    xspeed = -3;
                     break;
                 case 2:
+                case 7:
                     yspeed = 3;
                     break;
                 case 3:
-                    xspeed = -3;
-                    break;
-                case 0:
-                    xspeed = 3;
+                case 4:
+                    yspeed = -3;
                     break;
             }
         }
